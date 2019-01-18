@@ -110,7 +110,7 @@ textarea:focus, input:focus, button:focus {
 
 .section-two {
   width: 100vw;
-  min-height: 100vh;
+  min-height: 60vh;
   padding-bottom: 50px;
 }
 
@@ -502,19 +502,19 @@ textarea:focus, input:focus, button:focus {
   width: 100vw;
   position: relative;
   background-color: #31374F;
-  background-image: url(images/cover7.png);
+  background-image: url(./images/cover7.png);
 }
 
 .section-five .ghost {
   visibility: hidden;
   width: 100%;
-  top: 0;
-  left: 0;
+  top: 10%;
+  left: 0%;
   position: relative;
 }
 
 .section-five .wrapper {
-  min-height: 690px;
+  min-height: 600px;
   z-index: 10;
   position: relative;
 }
@@ -529,31 +529,31 @@ textarea:focus, input:focus, button:focus {
   margin-bottom: 10px;
   background-color: #F1629C;
 }
-
+/*
 .section-five .top-right-image {
   position: absolute;
   top: -40px;
   right: 0;
   width: 200px;
   height: 320px;
-  background-image: url(../images/img27.png);
+  background-image: url();
   background-repeat: no-repeat;
   background-size: 85% 100%;
   background-position: top right;
-}
+}*/
 
-.section-five .middle-left-image {
+/*.section-five .middle-left-image {
   position: absolute;
   top: 300px;
   width: 100px;
   height: 330px;
-  background-image: url(../images/img46.png);
+  background-image: url();
   background-repeat: no-repeat;
   background-size: 80% 100%;
   background-position: top left;
-}
+}*/
 
-.section-five .bottom-right-image {
+/*.section-five .bottom-right-image {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -563,7 +563,7 @@ textarea:focus, input:focus, button:focus {
   background-repeat: no-repeat;
   background-size: 90% 100%;
   background-position: top right;
-}
+}*/
 
 .section-five .bottom-image {
   position: absolute;
@@ -585,15 +585,15 @@ textarea:focus, input:focus, button:focus {
   padding-top: 80px;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  line-height: 35px;
+  line-height: 25px;
 }
 
 .section-five .profile-cart {
   position: absolute;
   width: 400px;
   height: 500px;
-  top: -60px;
-  left: 20%;
+  top: 120px;
+  left: 15%;
   padding: 0;
 }
 
@@ -605,7 +605,7 @@ textarea:focus, input:focus, button:focus {
 .section-five .profile-cart .name-tag {
   position: absolute;
   width: 100%;
-  top: 38%;
+  top: 48%;
   left: 50px;
 }
 
@@ -624,22 +624,31 @@ textarea:focus, input:focus, button:focus {
 }
 
 .section-five .xtwo {
-  top: 70px;
-  left: 58%;
+  top: 120px;
+  left: 40%;
+}
+
+.section-five .xfive {
+  top: 120px;
+  left: 64%;
+}
+.section-five .xsix {
+  top: 600px;
+  left: 64%;
 }
 
 .section-five .xthree {
-  top: 480px;
+  top: 600px;
 }
 
 .section-five .xfour {
   top: 600px;
-  left: 58%;
+  left: 40%;
 }
 
 .section-five button {
   position: absolute;
-  top: 1200px;
+  top: 1575px;
   margin-left: -90px;
   left: 50%;
   width: 180px;
@@ -1051,7 +1060,7 @@ textarea:focus, input:focus, button:focus {
   }
   .section-five .wrapper {
     width: 100%;
-    min-height: 1200px !important;
+    min-height: 1600px !important;
   }
   .section-five .wrapper .profile-cart {
     margin-left: -200px;
@@ -1066,6 +1075,12 @@ textarea:focus, input:focus, button:focus {
   }
   .section-five .wrapper .xfour {
     top: 1650px;
+  }
+  .section-five .wrapper .xfive {
+    top: 2150px;
+  }
+  .section-five .wrapper .xsix {
+    top: 2650px;
   }
   .section-five .wrapper button {
     top: 2210px;
