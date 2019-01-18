@@ -45,6 +45,11 @@ textarea:focus, input:focus, button:focus {
 .section-one .navbar .logo-main, .section-one .navbar .navicon {
   position: absolute;
   top: 30px;
+  width: 110px;
+}
+.section-one .navbar .icon, .section-one .navbar .navicon {
+  position: absolute;
+  top: 30px;
   width: 35px;
 }
 
