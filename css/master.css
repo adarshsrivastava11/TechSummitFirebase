@@ -42,10 +42,16 @@ textarea:focus, input:focus, button:focus {
   position: relative;
 }
 
-.section-one .navbar .logo-main, .section-one .navbar .navicon {
+.section-one .navbar .navicon {
   position: absolute;
   top: 30px;
   width: 35px;
+}
+
+.section-one .navbar .logo-main{
+  position: absolute;
+  top: 30px;
+  width: 110px;
 }
 
 .section-one .navbar .navicon {
@@ -929,7 +935,7 @@ textarea:focus, input:focus, button:focus {
 
 .section-last .upper-crust {
   position: relative;
-  min-height: 500px;
+  min-height: 300px;
   z-index: 10;
   width: 100%;
   margin: 0 auto;
