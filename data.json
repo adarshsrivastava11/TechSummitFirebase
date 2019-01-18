@@ -1,0 +1,14 @@
+{
+	"name": "Adarsh",
+	"workshops": [
+		{"number": 1, "displayNumber": "01", "title": "First Vue Workshop", "info" :"Ekdum Faltu Workshop Hai bey", "content": "Yaha Jye ga sab", "image": "images/img21.jpg"},
+		{"number": 2, "displayNumber": "02", "title": "Second Vue Workshop", "info" :"Ekdum Faltu Workshop Hai bey 2", "content": "Yahi Daalo", "image": "images/img21.jpg"},
+		{"number": 3, "displayNumber": "03", "title": "Third Vue Workshop", "info" :"Ekdum Faltu Workshop Hai bey 3", "content": "Yaha aa Gya", "image": "images/img21.jpg"}
+	],
+	"sponsers": [
+		{"image": "images/img21.png"},
+		{"image": "images/img22.png"},
+		{"image": "images/img23.png"}
+	]
+
+}

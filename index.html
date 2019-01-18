@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+	<link rel="icon"  type="image/png"  href="images/favicon.ico" />
+	<title>TechSummit'19 | Techkriti</title>
+	<meta name="author" content="Amar Prakash Pandey">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/ae7ffc7b99.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@1.7.13/jquery.popupoverlay.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  	<script src="js/backend.js"></script>
+	<style>
+		html {
+		  scroll-behavior: smooth;
+		}
+		.well {
+			background-color: #F1629C;
+	        display:none;
+	        margin:1em;
+	        max-width: 1000px;
+	        overflow: auto;
+	        max-height: 100vh;
+	    }
+	    .well .JPO_close {
+	        position: absolute;
+	        top: 0;
+	        right: 0px;
+	        border-radius: 2px;
+	        background: none;
+	        border: 0;
+	        font-size: 25px;
+	        padding: 0 10px;
+	    }
+	</style>
+</head>
+<body>
+
+	<section class="section-one">
+		<div class="navbar" >
+			<!-- <img class="logo-main" src="./images/logo-main.png"> -->
+			<i class="navicon fa fa-bars" aria="true">TechSummit</i>		
+		</div>
+		 <div id="JPO" class="well">
+		 	<button disabled id="quickstart-sign-in">Log in with Facebook</button>
+		 	<button onclick="postData()">Post Data</button>
+		 	<button onclick="getData()">Get Data</button>
+		 	<img src="" id="photoURL">
+		 	<p id="displayName"></p>
+		 	<div class="row">
+		 		<div class="col-md-3" v-for="workshop in workshops">
+				 	<div class="card" style="padding: 20px">
+					  <img class="card-img-top" :src="workshop.image">
+					  <div class="card-body">
+					    <h5 class="card-title">{{ workshop.title }}</h5>
+					    <p class="card-text">{{ workshop.content }}</p>
+					  </div>
+					  <div class="card-body">
+					    <a href="#" class="card-link btn btn-success" v-on:click="selectWorkshop(workshop)">Choose This Workshop!</a>
+					  </div>
+					</div>
+				</div>
+			</div>
+		    <!-- Button to close the popup -->
+		    <button class="JPO_close">X</button>
+		 </div>
+		<div class="info-container">
+	        <div id="particles-js"></div>
+			<p class="p-date"><strong>8 - 10 March 2019</strong></p>
+			<p id="typing">Industry 4.0</p>
+			<p class="p-description">The Ultimate Customer Support Experience Event</p>
+			<div class="button-container"><button class="circular JPO_open">Register Now</button></div>
+			<div class="button-container"><a href="#Speakers"> <button class="circular">See LineUp</button> </a></div>
+		</div>
+	</Section>
+
+	<section class="section-two row" id="app">
+		<div class="col-sm-6 two-left">
+			<div class="desc-div left">
+				<div class="side-tag">
+					<div class="draw-line"></div>
+					<span>THE CONFERENCE</span>
+				</div>
+				<div class="info-content">
+					<div class="top-design-line">
+						<div class="draw-line"></div>
+						<span>INSPIRE . CREATE . REPEAT</span>
+						<h1 class="info-content-heading">
+							Workshops
+						</h1>
+						<div class="p-content">
+							{{ workshopContent }}
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 two-right">
+			<div class="desc-div right">
+				<div class="multiple-repeat" v-for="workshop in workshops">
+					<div class="multiple-repeat-number">{{ workshop.displayNumber }}.</div>
+					<div class="mod-content">
+						<span class="multiple-repeat-heading" > {{ workshop.title }} <button class="btn btn-info" v-on:click="loadContent(workshop)"></button> </span>
+						<div class="gap10px"></div>
+						<p class="multiple-repeat-info">
+							{{ workshop.info }}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-five" id="Speakers">
+		<div class="wrapper">
+			<div class="line-draw"></div>
+			<div class="main-heading">
+				<span>Speakers</span>
+			</div>
+			<div class="profile-cart xone">
+				<div class="name-tag">
+					<h4>Mercer Smith Looper</h4>
+					<span>Head of Support at Trello</span>
+				</div>
+				<img src="images/img36.png">
+			</div>
+			<div class="profile-cart xtwo">
+				<div class="name-tag">
+					<h4>Jeremy DuVall</h4>
+					<span>Happiness Engineer at Automatic</span>
+				</div>
+				<img src="images/img29.png">
+			</div>
+			<div class="profile-cart xthree">
+				<div class="name-tag">
+					<h4>Elizabeth Tobby</h4>
+					<span>Head of Community Engagement<br>at Medium</span>
+				</div>
+				<img src="images/img30.png">
+			</div>
+			<div class="profile-cart xfour">
+				<div class="name-tag">
+					<h4>Dustin Meza</h4>
+					<span>Director of Customer Experience<br>Operations, WP Engine</span>
+				</div>
+				<img src="images/img36.png">
+			</div>
+			<div class="profile-cart xthree">
+				<div class="name-tag">
+					<h4>Elizabeth Tobby</h4>
+					<span>Head of Community Engagement<br>at Medium</span>
+				</div>
+				<img src="images/img30.png">
+			</div>
+			<div class="profile-cart xfour">
+				<div class="name-tag">
+					<h4>Dustin Meza</h4>
+					<span>Director of Customer Experience<br>Operations, WP Engine</span>
+				</div>
+				<img src="images/img36.png">
+			</div>
+			<button class="circular">CHECK FULL CREW</button>
+		</div>
+		<div class="top-right-image"></div>
+		<div class="middle-left-image"></div>
+		<!-- <div class="bottom-right-image"></div> -->
+		<!-- <div class="bottom-image"> -->
+		</div>
+		<div class="wrapper ghost">1</div>
+	</section>
+
+	<section class="section-six">
+		<div class="line-draw"></div>
+		<div class="schedule-dates">
+			<h4 class="head4">Schedule</h4>
+			<div class="row r-one">
+				<div class="col-sm-4 date">
+					<div class="draw-line-hr"></div>
+					<span class="sd-dates">
+						13 APRIL, 2017
+					</span>
+				</div>
+				<div class="col-sm-4 info">
+					<span class="time">10 00 AM</span><br>
+					<span class="note">Opening of conference + Connect</span>
+				</div>
+				<div class="col-sm-4 info">
+					<span class="time">11 00 AM</span><br>
+					<span class="note">"Inspiration Know"<br>
+						Lorem ipsum dolor sit amet, consectetur
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 date">
+					<div class="fix"></div>
+					<span class="sd-dates">
+						14 APRIL, 2017
+					</span>
+				</div>
+				<div class="col-sm-4 ad info">
+					<div class="gap20px"></div>
+					<span class="time">12 00 PM</span><br>
+					<span class="note">Break</span>
+				</div>
+				<div class="col-sm-4 ad info">
+					<div class="gap20px"></div>
+					<span class="time">01 00 PM</span><br>
+					<span class="note">"Creation is Business"<br>
+						Lorem ipsum dolor sit amet, consectetur
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4 info">
+					<div class="gap20px"></div>
+					<span class="time">03 00 PM</span><br>
+					<span class="note">"Customer Experience"<br>
+						Lorem ipsum dolor sit amet, consectetur
+					</span>
+				</div>
+				<div class="col-sm-4 info">
+					<div class="gap20px"></div>
+					<span class="time">04 30 PM</span><br>
+					<span class="note">End of the Conference</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-eight" id="Sponsers">
+		<div class="wrap-sponsers">
+			<h2>Our awesome sponsers</h2>
+			<div class="row">
+				<div class="col-sm-4" v-for="sponser in sponsers">
+					<img :src="sponser.image">
+				</div>
+			</div>
+			<div class="tagline-info">
+				Want to get involved and be a sponser,<br>
+				ready and join us!
+			</div>
+			<div class="button-container"><button class="circular">BECOME A SPONSER</button></div>
+			<div class="side-tag">
+				<div class="draw-line"></div>
+				<span>AN EVENT BY TECHKRITI</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-last">
+		<div class="upper-crust">
+			<div class="line-draw"></div>
+			<div class="journey-image">
+				<img src="images/img40.png">
+				<h1 style="color: white;">&nbsp; Techkriti  &nbsp; &nbsp;IIT Kanpur</h1>
+			</div>
+			<!-- <div class="col-lg-4 col-md-4 col-sm-6" style=" text-align: center;">
+			<h1 style="color: white;">Techkriti | IIT Kanpur</h1>
+			</div> -->
+			<!-- <div class="input-box">
+				
+				<h3 style="">Techkriti | IIT Kanpur</h3>
+			</div> -->
+			<div class="footer">TechSummit summit is bought to you by Techkriti. All right reserved.</div>
+		</div>
+		<div class="right-top"></div>
+		<div class="left-bottom"></div>
+	</section>
+
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript" src="particles.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="js/frontend.js"></script>
+	<script>
+    $(document).ready(function() {
+
+      $('#JPO').popup({
+		  background: false,
+		  horizontal: 'right',
+		  vertical: 'bottom',
+		  keepfocus: false,
+		  autozindex: true,
+		  blur: true
+		});
+      // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
+      //$.fn.popup.defaults.pagecontainer = '#page'
+    });
+  </script>
+	<!-- <script src="https://use.fontawesome.com/ae7ffc7b99.js"></script> -->
+</body>
+</html>
