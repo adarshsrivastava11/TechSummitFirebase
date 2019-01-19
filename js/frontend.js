@@ -1,5 +1,5 @@
 var app = new Vue({
-  el: '#app',
+  el: '#Intro',
   data () {
     return {
       intros: [],
@@ -53,8 +53,8 @@ var Speakers = new Vue({
   }
 });
 
-var JPO = new Vue({
-  el: '#JPO',
+var Workshops = new Vue({
+  el: '#Workshops',
   data () {
     return {
       workshops: []
@@ -69,8 +69,7 @@ var JPO = new Vue({
   },
   methods: {
   	selectWorkshop: function(workshop){
-  		workshopDetails = workshop;
-  		console.log(workshopDetails);
+  		console.log(workshop);
   	}
   }
 });

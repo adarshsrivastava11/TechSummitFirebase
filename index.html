@@ -7,7 +7,8 @@
 	<link rel="icon"  type="image/png"  href="images/favicon.ico" />
 	<title>TechSummit'19 | Techkriti</title>
 	<meta name="author" content="Amar Prakash Pandey">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/ae7ffc7b99.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -56,20 +57,6 @@
 		 	<button onclick="getData()">Get Data</button>
 		 	<img src="" id="photoURL">
 		 	<p id="displayName"></p>
-		 	<div class="row">
-		 		<div class="col-md-3" v-for="workshop in workshops">
-				 	<div class="card" style="padding: 20px">
-					  <img class="card-img-top" :src="workshop.image">
-					  <div class="card-body">
-					    <h5 class="card-title">{{ workshop.title }}</h5>
-					    <p class="card-text">{{ workshop.content }}</p>
-					  </div>
-					  <div class="card-body">
-					    <a href="#" class="card-link btn btn-success" v-on:click="selectWorkshop(workshop)">Choose This Workshop!</a>
-					  </div>
-					</div>
-				</div>
-			</div>
 		    <!-- Button to close the popup -->
 		    <button class="JPO_close">X</button>
 		 </div>
@@ -77,13 +64,13 @@
 	        <div id="particles-js"></div>
 			<p class="p-date"><strong>8 - 10 March 2019</strong></p>
 			<p id="typing">Industry 4.0</p>
-			<p class="p-description">The Ultimate Customer Support Experience Event</p>
+			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
 			<div class="button-container"><button class="circular JPO_open">Register Now</button></div>
 			<div class="button-container"><a href="#Speakers"> <button class="circular">See LineUp</button> </a></div>
 		</div>
 	</Section>
 
-	<section class="section-two row" id="app">
+	<section class="section-two row" id="Intro">
 		<div class="col-sm-6 two-left">
 			<div class="desc-div left">
 				<div class="side-tag">
@@ -95,7 +82,7 @@
 						<div class="draw-line"></div>
 						<span>INSPIRE . CREATE . REPEAT</span>
 						<h1 class="info-content-heading">
-							Workshops
+							Introduction
 						</h1>
 						<div class="p-content">
 							{{ introContent }}
@@ -135,22 +122,8 @@
 				</div>
 				<img :src="speaker.image">
 			</div>
-		</div> 
-		 
-			<!-- <div class="col-lg-4 col-md-4 col-sm-6 ">
-				<div class="thumbnail"><img src="https://farm5.staticflickr.com/4240/34943640193_c2a25d399e_z.jpg"></div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 ">
-				<div class="thumbnail"><img src="https://i.ytimg.com/vi/c7oV1T2j5mc/maxresdefault.jpg"></div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 ">
-				<div class="thumbnail"><img src="https://www.hd-wallpapersdownload.com/script/bulk-upload/desktop-landscape-nature-wallpaper-dowload.jpg"></div>
-			</div>		 -->		
+		</div> 		
 		 </div> </div>
-		<!-- <div class="top-right-image"></div> -->
-		<!-- <div class="middle-left-image"></div> -->
-		<!-- <div class="bottom-right-image"></div> -->
-		<!-- <div class="bottom-image"> -->
 		</div>
 		<div class="wrapper ghost">1</div>
 	</section>
@@ -212,6 +185,32 @@
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<section class="section-five" id="Workshops">
+		<div class="wrapper container">
+			<div class="main-heading">
+				<span>Workshops</span>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3" v-for="workshop in workshops">
+					<div class="card text-center">
+	  				<div class="card-header">{{ workshop.title }}</div>
+	  				<img class="card-img-top" src="..." alt="Card image cap">
+		  			<div class="card-body">
+		    			<h5 class="card-title">{{ workshop.info }}</h5>
+		    			<p class="card-text">{{ workshop.content }}</p>
+		    			<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
+		  			</div>
+		  			<div class="card-footer text-muted">
+		  				<p>For Students - {{ workshop.priceStudent }}</p>
+		  				<p>For Others - {{ workshop.priceOther}}</p>
+		  			</div>
+				</div>
+			</div>
+		</div>
+		<div style="visibility: hidden;">1</div>
 	</section>
 
 	<section class="section-eight" id="Sponsers">
