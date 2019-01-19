@@ -129,8 +129,33 @@
 		<div class="wrapper ghost">1</div>
 	</section>
 
+	<section class="section-five" id="Workshops">
+		<div class="wrapper container">
+			<div class="main-heading" style="color: #31374F !important">
+				<span>Workshops<br></span>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3" v-for="workshop in workshops">
+					<div class="card text-center">
+	  				<div class="card-header">{{ workshop.title }}</div>
+	  				<img class="card-img-top" :src="workshop.image">
+		  			<div class="card-body" style="background: #FAFAFA">
+		    			<h5 class="card-title">{{ workshop.info }}</h5>
+		    			<p class="card-text">{{ workshop.content }}</p>
+		    			<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
+		  			</div>
+		  			<div class="card-footer text-muted">
+		  				<p>For Students - {{ workshop.priceStudent }}</p>
+		  				<p>For Others - {{ workshop.priceOther}}</p>
+		  			</div>
+				</div>
+			</div>
+		</div>
+		<div style="visibility: hidden;">1</div>
+	</section>
+
 	<section class="section-six">
-		<div class="line-draw"></div>
 		<div class="schedule-dates">
 			<h4 class="head4">Schedule</h4>
 			<div class="row r-one">
@@ -186,32 +211,6 @@
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="section-five" id="Workshops">
-		<div class="wrapper container">
-			<div class="main-heading">
-				<span>Workshops</span>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-md-3" v-for="workshop in workshops">
-					<div class="card text-center">
-	  				<div class="card-header">{{ workshop.title }}</div>
-	  				<img class="card-img-top" :src="workshop.image">
-		  			<div class="card-body">
-		    			<h5 class="card-title">{{ workshop.info }}</h5>
-		    			<p class="card-text">{{ workshop.content }}</p>
-		    			<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
-		  			</div>
-		  			<div class="card-footer text-muted">
-		  				<p>For Students - {{ workshop.priceStudent }}</p>
-		  				<p>For Others - {{ workshop.priceOther}}</p>
-		  			</div>
-				</div>
-			</div>
-		</div>
-		<div style="visibility: hidden;">1</div>
 	</section>
 
 	<section class="section-eight" id="Sponsers">

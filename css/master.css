@@ -506,7 +506,13 @@ textarea:focus, input:focus, button:focus {
 .section-five {
   width: 100vw;
   position: relative;
-  background-color: #31374F;
+  background-color:  #31374F;
+}
+
+#Workshops{
+  width: 100vw;
+  position: relative;
+  background-color:  #FAFAFA !important;
 }
 
 .section-five .ghost {
