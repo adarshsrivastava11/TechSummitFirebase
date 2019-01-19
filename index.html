@@ -44,9 +44,11 @@
 <body>
 
 	<section class="section-one">
-		<div class="navbar" >
+		<div class="navbar" style="margin-left:9%">
+			<img class="logo-main" src="./images/logo-main.png">
+			
 			<!-- <img class="logo-main" src="./images/logo-main.png"> -->
-			<i class="navicon fa fa-bars" aria="true">TechSummit</i>		
+			<!-- <i class="navicon fa fa-bars" aria="true">TechSummit</i>		 -->
 		</div>
 		 <div id="JPO" class="well">
 		 	<button disabled id="quickstart-sign-in">Log in with Facebook</button>
@@ -96,7 +98,7 @@
 							Workshops
 						</h1>
 						<div class="p-content">
-							{{ workshopContent }}
+							{{ introContent }}
 						</div>
 						
 						
@@ -106,13 +108,13 @@
 		</div>
 		<div class="col-sm-6 two-right">
 			<div class="desc-div right">
-				<div class="multiple-repeat" v-for="workshop in workshops">
-					<div class="multiple-repeat-number">{{ workshop.displayNumber }}.</div>
+				<div class="multiple-repeat" v-for="intro in intros">
+					<div class="multiple-repeat-number">{{ intro.number }}.</div>
 					<div class="mod-content">
-						<span class="multiple-repeat-heading" > {{ workshop.title }} <button class="btn btn-info" v-on:click="loadContent(workshop)"></button> </span>
+						<span class="multiple-repeat-heading" > {{ intro.title }} <button class="btn btn-info" v-on:click="loadContent(intro)"></button> </span>
 						<div class="gap10px"></div>
 						<p class="multiple-repeat-info">
-							{{ workshop.info }}
+							{{ intro.info }}
 						</p>
 					</div>
 				</div>
@@ -120,58 +122,33 @@
 		</div>
 	</section>
 
-	<section class="section-five" id="Speakers">
-		<div class="wrapper">
+	<section class="section-five " id="Speakers">
+		 <div class="wrapper">
 			<div class="line-draw"></div>
 			<div class="main-heading">
 				<span>Speakers</span>
 			</div>
-			<div class="profile-cart xone">
+			<div :class="speaker.styling" v-for="speaker in speakers">
 				<div class="name-tag">
-					<h4>Mercer Smith Looper</h4>
-					<span>Head of Support at Trello</span>
+					<h4>{{ speaker.name }}</h4>
+					<span>{{ speaker.position }}</span>
 				</div>
-				<img src="images/img36.png">
+				<img :src="speaker.image">
 			</div>
-			<div class="profile-cart xtwo">
-				<div class="name-tag">
-					<h4>Jeremy DuVall</h4>
-					<span>Happiness Engineer at Automatic</span>
-				</div>
-				<img src="images/img29.png">
+		</div> 
+		 
+			<!-- <div class="col-lg-4 col-md-4 col-sm-6 ">
+				<div class="thumbnail"><img src="https://farm5.staticflickr.com/4240/34943640193_c2a25d399e_z.jpg"></div>
 			</div>
-			<div class="profile-cart xthree">
-				<div class="name-tag">
-					<h4>Elizabeth Tobby</h4>
-					<span>Head of Community Engagement<br>at Medium</span>
-				</div>
-				<img src="images/img30.png">
+			<div class="col-lg-4 col-md-4 col-sm-6 ">
+				<div class="thumbnail"><img src="https://i.ytimg.com/vi/c7oV1T2j5mc/maxresdefault.jpg"></div>
 			</div>
-			<div class="profile-cart xfour">
-				<div class="name-tag">
-					<h4>Dustin Meza</h4>
-					<span>Director of Customer Experience<br>Operations, WP Engine</span>
-				</div>
-				<img src="images/img36.png">
-			</div>
-			<div class="profile-cart xthree">
-				<div class="name-tag">
-					<h4>Elizabeth Tobby</h4>
-					<span>Head of Community Engagement<br>at Medium</span>
-				</div>
-				<img src="images/img30.png">
-			</div>
-			<div class="profile-cart xfour">
-				<div class="name-tag">
-					<h4>Dustin Meza</h4>
-					<span>Director of Customer Experience<br>Operations, WP Engine</span>
-				</div>
-				<img src="images/img36.png">
-			</div>
-			<button class="circular">CHECK FULL CREW</button>
-		</div>
-		<div class="top-right-image"></div>
-		<div class="middle-left-image"></div>
+			<div class="col-lg-4 col-md-4 col-sm-6 ">
+				<div class="thumbnail"><img src="https://www.hd-wallpapersdownload.com/script/bulk-upload/desktop-landscape-nature-wallpaper-dowload.jpg"></div>
+			</div>		 -->		
+		 </div> </div>
+		<!-- <div class="top-right-image"></div> -->
+		<!-- <div class="middle-left-image"></div> -->
 		<!-- <div class="bottom-right-image"></div> -->
 		<!-- <div class="bottom-image"> -->
 		</div>

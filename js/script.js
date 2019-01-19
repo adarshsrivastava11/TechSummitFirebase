@@ -14,6 +14,8 @@ scroll.reveal('.center-up-image', { distance: '50px', scale: 0.9 });
 scroll.reveal('.xtwo', { distance: '50px', origin: 'right', scale: 0.9 });
 scroll.reveal('.xfour', { distance: '50px', origin: 'right', scale: 0.9 });
 scroll.reveal('.xone', { distance: '50px', scale: 0.9 });
+scroll.reveal('.xfive', { distance: '50px', scale: 0.9 });
+scroll.reveal('.xsix', { distance: '50px', scale: 0.9 });
 scroll.reveal('.xthree', { distance: '50px', scale: 0.9 });
 scroll.reveal('.date', { distance: '50px', origin: 'left', scale: 0.9 });
 scroll.reveal('.info', { distance: '50px', origin: 'right', scale: 0.9 });
