@@ -198,7 +198,7 @@
 				<div class="col-md-3" v-for="workshop in workshops">
 					<div class="card text-center">
 	  				<div class="card-header">{{ workshop.title }}</div>
-	  				<img class="card-img-top" src="..." alt="Card image cap">
+	  				<img class="card-img-top" :src="workshop.image">
 		  			<div class="card-body">
 		    			<h5 class="card-title">{{ workshop.info }}</h5>
 		    			<p class="card-text">{{ workshop.content }}</p>

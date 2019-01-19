@@ -3,7 +3,7 @@ var app = new Vue({
   data () {
     return {
       intros: [],
-      introContent: null
+      introContent: 'Industry 4.0 refers to the current trend of automation and data exchange in the manufacturing technologies, celebrated as the next industrial revolution. Techkriti agnizes this revolution and brings to you the unprecedented technical summit with the theme: Industry 4.0, for the first time in India by any institute.'
     }
   },
   mounted () {
