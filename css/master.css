@@ -1204,3 +1204,6 @@ textarea:focus, input:focus, button:focus {
     width: 250px !important;
   }
 }
+.fa-info-circle:hover{
+  color:white; 
+}
