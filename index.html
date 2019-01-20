@@ -6,7 +6,7 @@
 	<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
 	<link rel="shortcut icon" type="image/png" href="images/img40.png" />
 	<title>TechSummit'19 | Techkriti</title>
-	<meta name="author" content="Amar Prakash Pandey">
+	<meta name="author" content="Techkriti Web Team 2019">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/ae7ffc7b99.css">
@@ -112,9 +112,8 @@
 
 	<section class="section-five " id="Speakers">
 		 <div class="wrapper">
-			<div class="line-draw"></div>
 			<div class="main-heading">
-				<span>Speakers</span>
+				<span style="font-size: 3vw">Speakers</span>
 			</div>
 			<div :class="speaker.styling" v-for="speaker in speakers">
 				<div class="name-tag">
@@ -130,12 +129,12 @@
 	</section>
 
 	<section class="section-five" id="Workshops">
-		<div class="wrapper container">
+		<div class="wrapper container" style="padding-bottom:2%">
 			<div class="main-heading" style="color: #31374F !important">
-				<span>Workshops<br></span>
+				<span style="font-size: 4vw">Workshops<br></span><br>
 			</div>
 			<br>
-			<div class="row">
+			<div class="row" style="width:100%">
 				<div class="col-md-3" v-for="workshop in workshops">
 					<div class="card text-center">
 	  				<div class="card-header">{{ workshop.title }}</div>

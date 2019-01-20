@@ -16,6 +16,24 @@ textarea:focus, input:focus, button:focus {
   outline: none;
 }
 
+.card-body
+{
+  background: #613C8C !important;
+  color: #FFFFFF !important;
+}
+
+.card-header
+{
+  background: #003990 !important;
+  color:   #ffe680 !important;
+}
+
+.card-footer
+{
+  background: #003990 !important;
+  color:   #ffe680 !important;
+}
+
 .section-one {
   background-image: url(../images/img25.png);
   background-size: 100vw 120vh;
@@ -512,7 +530,7 @@ textarea:focus, input:focus, button:focus {
 #Workshops{
   width: 100vw;
   position: relative;
-  background-color:  #FAFAFA !important;
+  background-color:  #f0f0f5 !important;
 }
 
 .section-five .ghost {
