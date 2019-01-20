@@ -18,7 +18,7 @@ textarea:focus, input:focus, button:focus {
 
 .card-body
 {
-  background: #613C8C !important;
+  background: #272727 !important;
   color: #FFFFFF !important;
 }
 
@@ -499,6 +499,10 @@ textarea:focus, input:focus, button:focus {
   width: 270px;
   min-width: 270px;
   z-index: 100;
+}
+
+.card{
+  background: #272727 !important;
 }
 
 .section-four .card-view .settings-two h1 {
