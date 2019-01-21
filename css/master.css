@@ -93,6 +93,9 @@ textarea:focus, input:focus, button:focus {
   font-weight: 600;
   font-size: 18px;
   margin-bottom: -5px;
+  width: 12%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-one .info-container p {
@@ -100,6 +103,9 @@ textarea:focus, input:focus, button:focus {
   font-family: "Montserrat", sans-serif;
   font-size: 90px;
   font-weight: 800;
+  width: 38%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-one .info-container .p-description {
@@ -108,10 +114,13 @@ textarea:focus, input:focus, button:focus {
   font-size: 17px;
   margin-top: 15px;
   font-weight: 400;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-one .info-container .button-container {
-  width: 100%;
+  width: 10%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
