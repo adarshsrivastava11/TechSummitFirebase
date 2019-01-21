@@ -14,7 +14,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@1.7.13/jquery.popupoverlay.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@1.7.13/jquery.popupoverlay.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./lib/cntl.css">
@@ -65,7 +65,7 @@
 		<div class="info-container">
 	        <div id="particles-js"></div>
 			<p class="p-date"><strong>8 - 10 March 2019</strong></p>
-			<p id="typing">Industry 4.0</p>
+			<p id="typing" style="padding-left:4%">Industry 4.0</p>
 			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
 			<div class="button-container"><button class="circular JPO_open"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button></div>
 			<div class="button-container"><a href="#Speakers"> <button class="circular"><i class="fas fa-microphone"></i> | SEE LINEUP</button> </a></div>
@@ -186,7 +186,7 @@
 				</p>
 			</div>
 
-			<div class="cntl-image"><img src="./images/library.png"></div>
+			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Flibrary.png?alt=media&token=f1d4c5d0-b188-43d1-a124-f905bf0542c8"></div>
 			<div class="cntl-icon cntl-center">'03</div>
 		</div>
 
@@ -198,7 +198,7 @@
 				</p>
 			</div>
 
-			<div class="cntl-image"><img src="./images/hostel.png"></div>
+			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhostel.png?alt=media&token=f4ba3650-3886-475d-b7be-d1a0797700b2"></div>
 			<div class="cntl-icon cntl-center">'04</div>
 		</div>
 
@@ -210,7 +210,7 @@
 				</p>
 			</div>
 
-			<div class="cntl-image"><img src="./images/hall2.png"></div>
+			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhall2.png?alt=media&token=0b3febbd-3a30-49eb-a383-0b32bc8195f8"></div>
 			<div class="cntl-icon cntl-center">'07</div>
 		</div>
 
@@ -222,7 +222,7 @@
 				</p>
 			</div>
 
-			<div class="cntl-image"><img src="./images/oat.png"></div>
+			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Foat.png?alt=media&token=71b2a294-596e-469a-a063-deeee7252bae"></div>
 			<div class="cntl-icon cntl-center">'10</div>
 		</div>
 		<div class="cntl-state">
@@ -233,24 +233,12 @@
 				</p>
 			</div>
 
-			<div class="cntl-image"><img src="./images/ground.png"></div>
+			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fground.png?alt=media&token=15f07985-18c9-4724-a01e-c67708fe4895"></div>
 			<div class="cntl-icon cntl-center">'10</div>
 		</div>
 
 	</div></div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="./lib/jquery.cntl.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(e){
-		$('.cntl').cntl({
-			revealbefore: 300,
-			anim_class: 'cntl-animate',
-			onreveal: function(e){
-				console.log(e);
-			}
-		});
-	});
-</script>
+
 	</section>
 
 	<section class="section-eight" id="Sponsers">
@@ -296,6 +284,7 @@
 	<script type="text/javascript" src="particles.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="./lib/jquery.cntl.js"></script>
 	<script>
     $(document).ready(function() {
 
@@ -306,6 +295,13 @@
 		  keepfocus: false,
 		  autozindex: true,
 		  blur: true
+		});
+		$('.cntl').cntl({
+			revealbefore: 300,
+			anim_class: 'cntl-animate',
+			onreveal: function(e){
+				console.log(e);
+			}
 		});
       // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
       //$.fn.popup.defaults.pagecontainer = '#page'
