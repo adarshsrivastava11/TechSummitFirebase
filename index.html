@@ -120,7 +120,7 @@
 					<h4>{{ speaker.name }}</h4>
 					<span>{{ speaker.position }}</span>
 				</div>
-				<img :src="speaker.image">
+				<img :src="speaker.image" style="width:400px !important; height:500px !important">
 			</div>
 		</div> 		
 		 </div> </div>
@@ -137,7 +137,7 @@
 			<div class="row" style="width:100%">
 				<div class="col-md-3" v-for="workshop in workshops">
 					<div class="card text-center">
-	  				<div class="card-header">{{ workshop.title }}</div>
+	  				<div class="card-header">{{ workshop.title }}<br>{{ workshop.company }}</div>
 	  				<img class="card-img-top" :src="workshop.image">
 		  			<div class="card-body" style="background: #FAFAFA">
 		    			<h5 class="card-title">{{ workshop.info }}</h5>
