@@ -18,8 +18,8 @@ textarea:focus, input:focus, button:focus {
 
 .card-body
 {
-  background: #272727 !important;
-  color: #FFFFFF !important;
+  background: #FAFAFA !important;
+  color: #272727 !important;
 }
 
 .card-header
@@ -502,7 +502,7 @@ textarea:focus, input:focus, button:focus {
 }
 
 .card{
-  background: #272727 !important;
+  background: #FAFAFA !important;
 }
 
 .section-four .card-view .settings-two h1 {
