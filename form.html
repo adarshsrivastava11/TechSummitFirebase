@@ -2,23 +2,51 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <title>Registration</title>
+    <style>
+      #header h3 {
+        font-family: "Montserrat", sans-serif;
+        padding: 1%;
+        float: right;
+        color: #FFFFFF;
+      }
+      #header img {
+        width: 5%;
+        height: 5%;
+        background-color:#FFFFFF;
+      }
+      #header {
+        background-color: rgb(108, 21, 116);
+      }
+      body {
+        background-color: rgb(217, 215, 231)
+      }
+      .profile-pic {
+        width: 7%;
+        height: 7%;
+      }
+    </style>
 </head>
 <body>
+    <div id="header">
+      <img src="images/img40.png">
+      <h3>Registration | TechSummit '19</h3>
+    </div>
+    <br><br>
     <div class="container">
-    <img src="/images/img40.png" class="float-left rounded-circle">
+    <img src="images/img40.png" class="float-left rounded-circle profile-pic"><br><br><br>
     <form action="/action_page.php">
-        <div class="form-group">
+              <div class="form-group">
           <label for="nm">Name</label>
             <div class="input-group-prepend">
-                <span class="input-group-text" id="nm">Actual Name</span>
+                <div class="input-group-text" id="nm">Actual Name</div>
             </div>
-        </div>
+          </div>
               <div class="form-group">
                 <label for="email">E-mail</label>
                   <div class="input-group-prepend">
-                      <span class="input-group-text" id="email">E-mail</span>
+                      <div class="input-group-text" id="email">E-mail</div>
                   </div>
-              </div>
+                </div>
               <div class="form-group">
                 <label for="yrst">Year of Study:</label>
                 <input type="text" class="form-control" id="yrst">
