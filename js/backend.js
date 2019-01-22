@@ -8,6 +8,12 @@ var config = {
   messagingSenderId: "795576738170"
 };
 firebase.initializeApp(config);
+var db = firebase.firestore();
+
+// Disable deprecated features
+db.settings({
+  timestampsInSnapshots: true
+});
 var uid = "";
 var email = "";
 var photoURL = "";
