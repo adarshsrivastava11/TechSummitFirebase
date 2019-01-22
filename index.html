@@ -139,7 +139,8 @@
 				<div class="col-md-3" v-for="workshop in workshops">
 					<div class="card text-center">
 	  				<div class="card-header">{{ workshop.title }}<br>{{ workshop.company }}</div>
-	  				<img class="card-img-top" :src="workshop.image">
+	  				<img class="card-img-top" :src="workshop.image"><br><div><br></div>
+	  				<img class="card-img-top" :src="workshop.image2" style="padding: 8px; padding-top: 10px">
 		  			<div class="card-body" style="background: #FAFAFA">
 		    			<h5 class="card-title">{{ workshop.info }}</h5>
 		    			<p class="card-text">{{ workshop.content }}</p>
@@ -149,7 +150,7 @@
 		  				<p>For Students - {{ workshop.priceStudent }}</p>
 		  				<p>For Others - {{ workshop.priceOther}}</p>
 					</div>
-					<div class="checkbox" style="visibility:hidden">
+					<div class="checkbox" hidden style="visibility:hidden">
 						<label><input type="checkbox" > Select This Workshop</label>
 					</div>
 				</div>
