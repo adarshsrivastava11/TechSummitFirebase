@@ -546,7 +546,7 @@ textarea:focus, input:focus, button:focus {
 }
 
 .section-five .wrapper {
-  min-height: 600px;
+  min-height: 1200px;
   z-index: 10;
   position: relative;
 }
@@ -655,26 +655,30 @@ textarea:focus, input:focus, button:focus {
   letter-spacing: 0.15em;
 }
 
+.section-five .xone {
+  top: 140px;
+  left: 15%;
+}
 .section-five .xtwo {
-  top: 120px;
+  top: 140px;
   left: 40%;
 }
 
 .section-five .xfive {
-  top: 120px;
+  top: 140px;
   left: 64%;
 }
 .section-five .xsix {
-  top: 600px;
+  top: 650px;
   left: 64%;
 }
 
 .section-five .xthree {
-  top: 600px;
+  top: 650px;
 }
 
 .section-five .xfour {
-  top: 600px;
+  top: 650px;
   left: 40%;
 }
 
@@ -1072,6 +1076,17 @@ textarea:focus, input:focus, button:focus {
   .section-four .card-view {
     min-height: 10px !important;
   }
+  @media screen and (min-height: 600px) {
+   .card {
+    max-height: 400px !important;
+    max-width: 400px !important;
+  }
+   @media screen and (min-height: 200px) {
+   .section-five .wrapper {
+    /*max-height: 400px !important;*/
+    height: 200px;
+    max-width: 400px !important;
+  }
   .section-four .draw-line {
     position: static !important;
     margin-left: auto;
@@ -1092,10 +1107,26 @@ textarea:focus, input:focus, button:focus {
   }
   .section-five .wrapper {
     width: 100%;
-    min-height: 1600px !important;
+    min-height: 2600px !important;
+  }
+
+  @media (max-width: @screen-xs) {
+    .section-five .wrapper .main-heading{font-size: 10px;}
+  }
+
+  @media (max-width: @screen-sm) {
+    .section-five .wrapper .main-heading{font-size: 14px;}
+  }
+
+  @media (max-width: @screen-xs) {
+    .section-six .wrapper .main-heading{font-size: 10px;}
+  }
+
+  @media (max-width: @screen-sm) {
+    .section-six .wrapper .main-heading{font-size: 14px;}
   }
   .section-five .wrapper .profile-cart {
-    margin-left: -200px;
+    margin-left: -165px;
     left: 50%;
     top: 150px;
   }
@@ -1183,6 +1214,12 @@ textarea:focus, input:focus, button:focus {
   }
   .section-seven .faq-content {
     width: 90% !important;
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 800px){
+  .section-five{
+    margin-top: 3%;
   }
 }
 

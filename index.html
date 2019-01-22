@@ -114,9 +114,9 @@
 	<section class="section-five " id="Speakers">
 		 <div class="wrapper">
 			<div class="main-heading">
-				<span style="font-size: 3vw">Speakers</span>
+				<span style="font-size: 40px; padding-bottom:10px;">Speakers</span>
 			</div>
-			<div :class="speaker.styling" v-for="speaker in speakers">
+			<!-- <div :class="speaker.styling" v-for="speaker in speakers">
 				<div class="name-tag">
 					<h4>{{ speaker.name }}</h4>
 					<span style="padding-right:15px; ">{{ speaker.position }}</span>
@@ -126,22 +126,37 @@
 		</div> 		
 		 </div> </div>
 		</div>
-		<div class="wrapper ghost">1</div>
+		<div class="wrapper ghost">1</div> -->
+		<div class="card-deck">
+		<div :class="speaker.styling" style="width: 21rem; "  v-for="speaker in speakers">
+		  <img class="card-img-top" :src="speaker.image" style="height:300px; width:334px;">
+		  <div class="card-body " style="padding-bottom:0px !important;  ">
+		    <h5 class="card-title" style="text-align: center;">{{ speaker.name }}</h5>
+		    <p class="card-text" style="text-align: center;">{{ speaker.position }}</p>
+		  </div>
+		  <div class="card-body">
+    		<a :href="speaker.linkedin" target="_blank" class="card-link" style="padding-left: 150px;" ><i class="fab fa-linkedin-in"></i></a>  		
+  		</div>
+		</div>
+	</div>
+	</div>
+
 	</section>
 
-	<section class="section-five" id="Workshops">
+	<section class="section-six" id="Workshops">
 		<div class="wrapper container" style="padding-bottom:2%">
-			<div class="main-heading" style="color: #31374F !important">
-				<span style="font-size: 4vw">Workshops<br></span><br>
+			<div class="main-heading" style="color: #31374F !important; text-align: center;">
+				<span style="font-size: 40px; ">Workshops</span><br>
 			</div>
 			<br>
 			<div class="row" style="width:100%">
-				<div class="col-md-3" v-for="workshop in workshops">
+				<div class="col-lg-3 col-md-3 col-sm-6 "  style="height: 700px;" v-for="workshop in workshops" >
 					<div class="card text-center">
 	  				<div class="card-header">{{ workshop.title }}<br>{{ workshop.company }}</div>
 	  				<img class="card-img-top" :src="workshop.image"><br><div><br></div>
-	  				<img class="card-img-top" :src="workshop.image2" style="padding: 8px; padding-top: 10px">
+	  				
 		  			<div class="card-body" style="background: #FAFAFA">
+		  				<img class="card-img" :src="workshop.image2" style="">
 		    			<h5 class="card-title">{{ workshop.info }}</h5>
 		    			<p class="card-text">{{ workshop.content }}</p>
 		    			<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
@@ -155,6 +170,7 @@
 					</div>
 				</div>
 			</div>
+				
 		</div>
 		<div style="visibility: hidden;">1</div>
 	</section>
