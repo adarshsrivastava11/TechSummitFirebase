@@ -16,6 +16,24 @@ textarea:focus, input:focus, button:focus {
   outline: none;
 }
 
+.card-body
+{
+  background: #FAFAFA !important;
+  color: #272727 !important;
+}
+
+.card-header
+{
+  background: #31374F !important;
+  color:   #ffe680 !important;
+}
+
+.card-footer
+{
+  background: #31374F !important;
+  color:   #ffe680 !important;
+}
+
 .section-one {
   background-image: url(../images/img25.png);
   background-size: 100vw 120vh;
@@ -107,7 +125,7 @@ textarea:focus, input:focus, button:focus {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   border: 1px solid #F1629C;
-  align: center;
+  text-align: center;
   border-radius: 50px;
   font-weight: 300;
   margin: 0 auto;
@@ -483,6 +501,10 @@ textarea:focus, input:focus, button:focus {
   z-index: 100;
 }
 
+.card{
+  background: #FAFAFA !important;
+}
+
 .section-four .card-view .settings-two h1 {
   font-size: 20px;
   color: #613C8C;
@@ -506,8 +528,13 @@ textarea:focus, input:focus, button:focus {
 .section-five {
   width: 100vw;
   position: relative;
-  background-color: #31374F;
-  background-image: url(./images/cover7.png);
+  background-color:  #31374F;
+}
+
+#Workshops{
+  width: 100vw;
+  position: relative;
+  background-color:  #f0f0f5 !important;
 }
 
 .section-five .ghost {
@@ -519,7 +546,7 @@ textarea:focus, input:focus, button:focus {
 }
 
 .section-five .wrapper {
-  min-height: 600px;
+  min-height: 1200px;
   z-index: 10;
   position: relative;
 }
@@ -628,26 +655,30 @@ textarea:focus, input:focus, button:focus {
   letter-spacing: 0.15em;
 }
 
+.section-five .xone {
+  top: 140px;
+  left: 15%;
+}
 .section-five .xtwo {
-  top: 120px;
+  top: 140px;
   left: 40%;
 }
 
 .section-five .xfive {
-  top: 120px;
+  top: 140px;
   left: 64%;
 }
 .section-five .xsix {
-  top: 600px;
+  top: 650px;
   left: 64%;
 }
 
 .section-five .xthree {
-  top: 600px;
+  top: 650px;
 }
 
 .section-five .xfour {
-  top: 600px;
+  top: 650px;
   left: 40%;
 }
 
@@ -1018,7 +1049,7 @@ textarea:focus, input:focus, button:focus {
   position: absolute;
 }
 
-.section-last .right-top {
+/* .section-last .right-top {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -1027,7 +1058,7 @@ textarea:focus, input:focus, button:focus {
   background-repeat: no-repeat;
   background-size: 80% 100%;
   background-position: top left;
-}
+} */
 
 /*.section-last .left-bottom {
   position: absolute;
@@ -1044,6 +1075,17 @@ textarea:focus, input:focus, button:focus {
 @media screen and (max-width: 1000px) {
   .section-four .card-view {
     min-height: 10px !important;
+  }
+  @media screen and (min-height: 600px) {
+   .card {
+    max-height: 400px !important;
+    max-width: 400px !important;
+  }
+   @media screen and (min-height: 200px) {
+   .section-five .wrapper {
+    /*max-height: 400px !important;*/
+    height: 200px;
+    max-width: 400px !important;
   }
   .section-four .draw-line {
     position: static !important;
@@ -1065,10 +1107,26 @@ textarea:focus, input:focus, button:focus {
   }
   .section-five .wrapper {
     width: 100%;
-    min-height: 1600px !important;
+    min-height: 2600px !important;
+  }
+
+  @media (max-width: @screen-xs) {
+    .section-five .wrapper .main-heading{font-size: 10px;}
+  }
+
+  @media (max-width: @screen-sm) {
+    .section-five .wrapper .main-heading{font-size: 14px;}
+  }
+
+  @media (max-width: @screen-xs) {
+    .section-six .wrapper .main-heading{font-size: 10px;}
+  }
+
+  @media (max-width: @screen-sm) {
+    .section-six .wrapper .main-heading{font-size: 14px;}
   }
   .section-five .wrapper .profile-cart {
-    margin-left: -200px;
+    margin-left: -165px;
     left: 50%;
     top: 150px;
   }
@@ -1159,6 +1217,12 @@ textarea:focus, input:focus, button:focus {
   }
 }
 
+@media (min-width: 1800px) and (max-width: 800px){
+  .section-five{
+    margin-top: 3%;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .section-one .info-container {
     margin-top: 3%;
@@ -1203,4 +1267,7 @@ textarea:focus, input:focus, button:focus {
   .section-last .input-box input {
     width: 250px !important;
   }
+}
+.fa-info-circle:hover{
+  color:white; 
 }

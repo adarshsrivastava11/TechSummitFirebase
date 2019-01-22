@@ -4,17 +4,20 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
-	<link rel="icon"  type="image/png"  href="images/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="images/img40.png" />
 	<title>TechSummit'19 | Techkriti</title>
-	<meta name="author" content="Amar Prakash Pandey">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="author" content="Techkriti Web Team 2019">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/ae7ffc7b99.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@1.7.13/jquery.popupoverlay.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./lib/cntl.css">
 	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
   	<script src="js/backend.js"></script>
 	<style>
@@ -39,11 +42,7 @@
 	        font-size: 25px;
 	        padding: 0 10px;
 	    }
-	    html {
-  scroll-behavior: smooth;
-}
 	</style>
-
 </head>
 <body>
 
@@ -60,20 +59,6 @@
 		 	<button onclick="getData()">Get Data</button>
 		 	<img src="" id="photoURL">
 		 	<p id="displayName"></p>
-		 	<div class="row">
-		 		<div class="col-md-3" v-for="workshop in workshops">
-				 	<div class="card" style="padding: 20px">
-					  <img class="card-img-top" :src="workshop.image">
-					  <div class="card-body">
-					    <h5 class="card-title">{{ workshop.title }}</h5>
-					    <p class="card-text">{{ workshop.content }}</p>
-					  </div>
-					  <div class="card-body">
-					    <a href="#" class="card-link btn btn-success" v-on:click="selectWorkshop(workshop)">Choose This Workshop!</a>
-					  </div>
-					</div>
-				</div>
-			</div>
 		    <!-- Button to close the popup -->
 		    <button class="JPO_close">X</button>
 		 </div>
@@ -81,13 +66,13 @@
 	        <div id="particles-js"></div>
 			<p class="p-date"><strong>8 - 10 March 2019</strong></p>
 			<p id="typing">Industry 4.0</p>
-			<p class="p-description">The Ultimate Customer Support Experience Event</p>
-			<div class="button-container"><button class="circular JPO_open">Register Now</button></div>
-			<div class="button-container"><a href="#Speakers"> <button class="circular">See LineUp</button> </a></div>
+			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
+			<div class="button-container"><button class="circular JPO_open"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button></div>
+			<div class="button-container"><a href="#Speakers"> <button class="circular"><i class="fas fa-microphone"></i> | SEE LINEUP</button> </a></div>
 		</div>
-	</Section>
+	</section>
 
-	<section class="section-two row" id="app">
+	<section class="section-two row" id="Intro">
 		<div class="col-sm-6 two-left">
 			<div class="desc-div left">
 				<div class="side-tag">
@@ -99,10 +84,10 @@
 						<div class="draw-line"></div>
 						<span>INSPIRE . CREATE . REPEAT</span>
 						<h1 class="info-content-heading">
-							Workshops
+							Introduction
 						</h1>
 						<div class="p-content">
-							{{ workshopContent }}
+							{{ introContent }}
 						</div>
 						
 						
@@ -112,13 +97,13 @@
 		</div>
 		<div class="col-sm-6 two-right">
 			<div class="desc-div right">
-				<div class="multiple-repeat" v-for="workshop in workshops">
-					<div class="multiple-repeat-number">{{ workshop.displayNumber }}.</div>
+				<div class="multiple-repeat" v-for="intro in intros">
+					<div class="multiple-repeat-number">{{ intro.number }}.</div>
 					<div class="mod-content">
-						<span class="multiple-repeat-heading" > {{ workshop.title }} <button class="btn btn-info" v-on:click="loadContent(workshop)"></button> </span>
+						<span class="multiple-repeat-heading" > {{ intro.title }} <i class="fa fa-info-circle" aria-hidden="true" v-on:click="loadContent(intro)"></i> </span>
 						<div class="gap10px"></div>
 						<p class="multiple-repeat-info">
-							{{ workshop.info }}
+							{{ intro.info }}
 						</p>
 					</div>
 				</div>
@@ -128,132 +113,144 @@
 
 	<section class="section-five " id="Speakers">
 		 <div class="wrapper">
-			<div class="line-draw"></div>
 			<div class="main-heading">
-				<span>Speakers</span>
+				<span style="font-size: 40px; padding-bottom:10px;">Speakers</span>
 			</div>
-			<div class="profile-cart xone">
+			<!-- <div :class="speaker.styling" v-for="speaker in speakers">
 				<div class="name-tag">
-					<h4>Mercer Smith Looper</h4>
-					<span>Head of Support at Trello</span>
+					<h4>{{ speaker.name }}</h4>
+					<span style="padding-right:15px; ">{{ speaker.position }}</span>
 				</div>
-				<img src="images/img36.png">
+				<img :src="speaker.image" style="height:450px; width:370px;" >
 			</div>
-			<div class="profile-cart xtwo">
-				<div class="name-tag">
-					<h4>Jeremy DuVall</h4>
-					<span>Happiness Engineer at Automatic</span>
-				</div>
-				<img src="images/img29.png">
-			</div>
-
-			<div class="profile-cart xthree">
-				<div class="name-tag">
-					<h4>Elizabeth Tobby</h4>
-					<span>Head of Community Engagement<br>at Medium</span>
-				</div>
-				<img src="images/img30.png">
-			</div>
-			<div class="profile-cart xfour">
-				<div class="name-tag">
-					<h4>Dustin Meza</h4>
-					<span>Director of Customer Experience<br>Operations, WP Engine</span>
-				</div>
-				<img src="images/img36.png">
-			</div>
-			<div class="profile-cart xfive">
-				<div class="name-tag">
-					<h4>Elizabeth Tobby</h4>
-					<span>Head of Community Engagement<br>at Medium</span>
-				</div>
-				<img src="images/img30.png">
-			</div>
-			<div class="profile-cart xsix">
-				<div class="name-tag">
-					<h4>Elizabeth Tobby</h4>
-					<span>Head of Community Engagement<br>at Medium</span>
-				</div>
-				<img src="images/img30.png">
-			</div>
-			
-			 
-		</div> 
-		 
-			<!-- <div class="col-lg-4 col-md-4 col-sm-6 ">
-				<div class="thumbnail"><img src="https://farm5.staticflickr.com/4240/34943640193_c2a25d399e_z.jpg"></div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 ">
-				<div class="thumbnail"><img src="https://i.ytimg.com/vi/c7oV1T2j5mc/maxresdefault.jpg"></div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 ">
-				<div class="thumbnail"><img src="https://www.hd-wallpapersdownload.com/script/bulk-upload/desktop-landscape-nature-wallpaper-dowload.jpg"></div>
-			</div>		 -->		
+		</div> 		
 		 </div> </div>
-		<!-- <div class="top-right-image"></div> -->
-		<!-- <div class="middle-left-image"></div> -->
-		<!-- <div class="bottom-right-image"></div> -->
-		<!-- <div class="bottom-image"> -->
 		</div>
-		<div class="wrapper ghost">1</div>
+		<div class="wrapper ghost">1</div> -->
+		<div class="card-deck">
+		<div :class="speaker.styling" style="width: 21rem; "  v-for="speaker in speakers">
+		  <img class="card-img-top" :src="speaker.image" style="height:300px; width:334px;">
+		  <div class="card-body " style="padding-bottom:0px !important;  ">
+		    <h5 class="card-title" style="text-align: center;">{{ speaker.name }}</h5>
+		    <p class="card-text" style="text-align: center;">{{ speaker.position }}</p>
+		  </div>
+		  <div class="card-body">
+    		<a href="#" class="card-link" style="padding-left: 150px;" ><i class="fab fa-linkedin-in"></i></a>  		
+  		</div>
+		</div>
+	</div>
+	</div>
+
+	</section>
+
+	<section class="section-six" id="Workshops">
+		<div class="wrapper container" style="padding-bottom:2%">
+			<div class="main-heading" style="color: #31374F !important; text-align: center;">
+				<span style="font-size: 40px; ">Workshops</span><br>
+			</div>
+			<br>
+			<div class="row" style="width:100%">
+				<div class="col-lg-3 col-md-3 col-sm-6 "  style="height: 700px;" v-for="workshop in workshops" >
+					<div class="card text-center">
+	  				<div class="card-header">{{ workshop.title }}<br>{{ workshop.company }}</div>
+	  				<img class="card-img-top" :src="workshop.image"><br><div><br></div>
+	  				
+		  			<div class="card-body" style="background: #FAFAFA">
+		  				<img class="card-img" :src="workshop.image2" style="">
+		    			<h5 class="card-title">{{ workshop.info }}</h5>
+		    			<p class="card-text">{{ workshop.content }}</p>
+		    			<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
+		  			</div>
+		  			<div class="card-footer text-muted">
+		  				<p>For Students - {{ workshop.priceStudent }}</p>
+		  				<p>For Others - {{ workshop.priceOther}}</p>
+					</div>
+					<div class="checkbox" hidden style="visibility:hidden">
+						<label><input type="checkbox" > Select This Workshop</label>
+					</div>
+				</div>
+			</div>
+				
+		</div>
+		<div style="visibility: hidden;">1</div>
 	</section>
 
 	<section class="section-six">
-		<div class="line-draw"></div>
-		<div class="schedule-dates">
-			<h4 class="head4">Schedule</h4>
-			<div class="row r-one">
-				<div class="col-sm-4 date">
-					<div class="draw-line-hr"></div>
-					<span class="sd-dates">
-						13 APRIL, 2017
-					</span>
-				</div>
-				<div class="col-sm-4 info">
-					<span class="time">10 00 AM</span><br>
-					<span class="note">Opening of conference + Connect</span>
-				</div>
-				<div class="col-sm-4 info">
-					<span class="time">11 00 AM</span><br>
-					<span class="note">"Inspiration Know"<br>
-						Lorem ipsum dolor sit amet, consectetur
-					</span>
-				</div>
+	
+		<div class="cntl">
+	<span class="cntl-bar cntl-center">
+		<span class="cntl-bar-fill"></span>
+	</span>
+
+	<div class="cntl-states">
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 1</h4>
+				<p>Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.</p>
 			</div>
-			<div class="row">
-				<div class="col-sm-4 date">
-					<div class="fix"></div>
-					<span class="sd-dates">
-						14 APRIL, 2017
-					</span>
-				</div>
-				<div class="col-sm-4 ad info">
-					<div class="gap20px"></div>
-					<span class="time">12 00 PM</span><br>
-					<span class="note">Break</span>
-				</div>
-				<div class="col-sm-4 ad info">
-					<div class="gap20px"></div>
-					<span class="time">01 00 PM</span><br>
-					<span class="note">"Creation is Business"<br>
-						Lorem ipsum dolor sit amet, consectetur
-					</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4 info">
-					<div class="gap20px"></div>
-					<span class="time">03 00 PM</span><br>
-					<span class="note">"Customer Experience"<br>
-						Lorem ipsum dolor sit amet, consectetur
-					</span>
-				</div>
-				<div class="col-sm-4 info">
-					<div class="gap20px"></div>
-					<span class="time">04 30 PM</span><br>
-					<span class="note">End of the Conference</span>
-				</div>
-			</div>
+			<div class="cntl-icon cntl-center">'00</div>
 		</div>
+
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 2</h4>
+				<p>Mauris varius gravida ex, vitae efficitur leo. Quisque auctor pharetra velit, ac consectetur tellus congue a. Mauris ullamcorper nulla eu ex eleifend blandit. In vel tristique massa, vitae scelerisque dolor. Phasellus quis faucibus nibh. Integer molestie finibus justo vitae efficitur.<br><br>Fusce tincidunt leo velit. Nulla rhoncus condimentum nulla, quis porta dolor. Ut enim sapien, semper eget finibus at, interdum eget elit. Maecenas id est nisl. Pellentesque metus tortor, varius eget tempus non, congue ut sem. Vivamus id lacinia libero, quis ornare nibh.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'03</div>
+		</div>
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 3</h4>
+				<p>Nulla ut tellus eu ante dapibus euismod ut sit amet est. Sed posuere scelerisque turpis, in bibendum magna feugiat non. Pellentesque ac tincidunt nibh. Nunc congue eu augue eu placerat. Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'04</div>
+		</div>
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 4</h4>
+				<p>Mauris varius gravida ex, vitae efficitur leo. Quisque auctor pharetra velit, ac consectetur tellus congue a. Mauris ullamcorper nulla eu ex eleifend blandit. In vel tristique massa, vitae scelerisque dolor. Phasellus quis faucibus nibh. Integer molestie finibus justo vitae efficitur.<br><br>Fusce tincidunt leo velit. Nulla rhoncus condimentum nulla, quis porta dolor. Ut enim sapien, semper eget finibus at, interdum eget elit. Maecenas id est nisl. Pellentesque metus tortor, varius eget tempus non, congue ut sem. Vivamus id lacinia libero, quis ornare nibh.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'07</div>
+		</div>
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 5</h4>
+				<p>Nulla ut tellus eu ante dapibus euismod ut sit amet est. Sed posuere scelerisque turpis, in bibendum magna feugiat non. Pellentesque ac tincidunt nibh. Nunc congue eu augue eu placerat. Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'10</div>
+		</div>
+
+	</div></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.cntl.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$('.cntl').cntl({
+			revealbefore: 300,
+			anim_class: 'cntl-animate',
+			onreveal: function(e){
+				console.log(e);
+			}
+		});
+	});
+</script>
 	</section>
 
 	<section class="section-eight" id="Sponsers">
@@ -278,7 +275,6 @@
 
 	<section class="section-last">
 		<div class="upper-crust">
-			<div class="line-draw"></div>
 			<div class="journey-image">
 				<img src="images/img40.png">
 				<h1 style="color: white;">&nbsp; Techkriti  &nbsp; &nbsp;IIT Kanpur</h1>
@@ -292,7 +288,6 @@
 			</div> -->
 			<div class="footer">TechSummit summit is bought to you by Techkriti. All right reserved.</div>
 		</div>
-		<div class="right-top"></div>
 		<div class="left-bottom"></div>
 	</section>
 
