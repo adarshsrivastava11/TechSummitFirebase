@@ -17,6 +17,7 @@
 	<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@1.7.13/jquery.popupoverlay.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./lib/cntl.css">
 	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
   	<script src="js/backend.js"></script>
 	<style>
@@ -118,9 +119,9 @@
 			<div :class="speaker.styling" v-for="speaker in speakers">
 				<div class="name-tag">
 					<h4>{{ speaker.name }}</h4>
-					<span>{{ speaker.position }}</span>
+					<span style="padding-right:15px; ">{{ speaker.position }}</span>
 				</div>
-				<img :src="speaker.image" style="width:400px !important; height:500px !important">
+				<img :src="speaker.image" style="height:450px; width:370px;" >
 			</div>
 		</div> 		
 		 </div> </div>
@@ -137,9 +138,8 @@
 			<div class="row" style="width:100%">
 				<div class="col-md-3" v-for="workshop in workshops">
 					<div class="card text-center">
-	  				<div class="card-header">{{ workshop.title }}</div>
-					  <img class="card-img-top" :src="workshop.image"><br>
-					  <img class="card-img-top" :src="workshop.image2" style="padding: 8px; padding-top: 10px">
+	  				<div class="card-header">{{ workshop.title }}<br>{{ workshop.company }}</div>
+	  				<img class="card-img-top" :src="workshop.image">
 		  			<div class="card-body" style="background: #FAFAFA">
 		    			<h5 class="card-title">{{ workshop.info }}</h5>
 		    			<p class="card-text">{{ workshop.content }}</p>
@@ -149,7 +149,7 @@
 		  				<p>For Students - {{ workshop.priceStudent }}</p>
 		  				<p>For Others - {{ workshop.priceOther}}</p>
 					</div>
-					<div class="checkbox" hidden style="visibility:hidden">
+					<div class="checkbox" style="visibility:hidden">
 						<label><input type="checkbox" > Select This Workshop</label>
 					</div>
 				</div>
@@ -159,61 +159,81 @@
 	</section>
 
 	<section class="section-six">
-		<div class="schedule-dates">
-			<h4 class="head4">Schedule</h4>
-			<div class="row r-one">
-				<div class="col-sm-4 date">
-					<div class="draw-line-hr"></div>
-					<span class="sd-dates">
-						13 APRIL, 2017
-					</span>
-				</div>
-				<div class="col-sm-4 info">
-					<span class="time">10 00 AM</span><br>
-					<span class="note">Opening of conference + Connect</span>
-				</div>
-				<div class="col-sm-4 info">
-					<span class="time">11 00 AM</span><br>
-					<span class="note">"Inspiration Know"<br>
-						Lorem ipsum dolor sit amet, consectetur
-					</span>
-				</div>
+	
+		<div class="cntl">
+	<span class="cntl-bar cntl-center">
+		<span class="cntl-bar-fill"></span>
+	</span>
+
+	<div class="cntl-states">
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 1</h4>
+				<p>Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.</p>
 			</div>
-			<div class="row">
-				<div class="col-sm-4 date">
-					<div class="fix"></div>
-					<span class="sd-dates">
-						14 APRIL, 2017
-					</span>
-				</div>
-				<div class="col-sm-4 ad info">
-					<div class="gap20px"></div>
-					<span class="time">12 00 PM</span><br>
-					<span class="note">Break</span>
-				</div>
-				<div class="col-sm-4 ad info">
-					<div class="gap20px"></div>
-					<span class="time">01 00 PM</span><br>
-					<span class="note">"Creation is Business"<br>
-						Lorem ipsum dolor sit amet, consectetur
-					</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4 info">
-					<div class="gap20px"></div>
-					<span class="time">03 00 PM</span><br>
-					<span class="note">"Customer Experience"<br>
-						Lorem ipsum dolor sit amet, consectetur
-					</span>
-				</div>
-				<div class="col-sm-4 info">
-					<div class="gap20px"></div>
-					<span class="time">04 30 PM</span><br>
-					<span class="note">End of the Conference</span>
-				</div>
-			</div>
+			<div class="cntl-icon cntl-center">'00</div>
 		</div>
+
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 2</h4>
+				<p>Mauris varius gravida ex, vitae efficitur leo. Quisque auctor pharetra velit, ac consectetur tellus congue a. Mauris ullamcorper nulla eu ex eleifend blandit. In vel tristique massa, vitae scelerisque dolor. Phasellus quis faucibus nibh. Integer molestie finibus justo vitae efficitur.<br><br>Fusce tincidunt leo velit. Nulla rhoncus condimentum nulla, quis porta dolor. Ut enim sapien, semper eget finibus at, interdum eget elit. Maecenas id est nisl. Pellentesque metus tortor, varius eget tempus non, congue ut sem. Vivamus id lacinia libero, quis ornare nibh.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'03</div>
+		</div>
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 3</h4>
+				<p>Nulla ut tellus eu ante dapibus euismod ut sit amet est. Sed posuere scelerisque turpis, in bibendum magna feugiat non. Pellentesque ac tincidunt nibh. Nunc congue eu augue eu placerat. Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'04</div>
+		</div>
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 4</h4>
+				<p>Mauris varius gravida ex, vitae efficitur leo. Quisque auctor pharetra velit, ac consectetur tellus congue a. Mauris ullamcorper nulla eu ex eleifend blandit. In vel tristique massa, vitae scelerisque dolor. Phasellus quis faucibus nibh. Integer molestie finibus justo vitae efficitur.<br><br>Fusce tincidunt leo velit. Nulla rhoncus condimentum nulla, quis porta dolor. Ut enim sapien, semper eget finibus at, interdum eget elit. Maecenas id est nisl. Pellentesque metus tortor, varius eget tempus non, congue ut sem. Vivamus id lacinia libero, quis ornare nibh.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'07</div>
+		</div>
+
+		<div class="cntl-state">
+			<div class="cntl-content">
+				<h4>Title 5</h4>
+				<p>Nulla ut tellus eu ante dapibus euismod ut sit amet est. Sed posuere scelerisque turpis, in bibendum magna feugiat non. Pellentesque ac tincidunt nibh. Nunc congue eu augue eu placerat. Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.
+				</p>
+			</div>
+
+			<div class="cntl-image"><img src="http://placesheen.com/300/200"></div>
+			<div class="cntl-icon cntl-center">'10</div>
+		</div>
+
+	</div></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/jquery.cntl.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$('.cntl').cntl({
+			revealbefore: 300,
+			anim_class: 'cntl-animate',
+			onreveal: function(e){
+				console.log(e);
+			}
+		});
+	});
+</script>
 	</section>
 
 	<section class="section-eight" id="Sponsers">
