@@ -19,7 +19,30 @@
 	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./lib/cntl.css">
 	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-  	<script src="js/backend.js"></script>
+	<script src="js/backend.js"></script>
+	<style>
+		#header h3 {
+		  font-family: "Montserrat", sans-serif;
+		  padding: 1%;
+		  float: right;
+		  color: #FFFFFF;
+		}
+		#header img {
+		  height: 100%;
+		}
+		#header {
+			height: 50px;
+		  background-color: rgb(108, 21, 116);
+		}
+		body {
+		  background-color: rgb(217, 215, 231)
+		}
+		.profile-pic {
+		  float:right;
+		  width: 7%;
+		  height: 7%;
+		}
+	</style>
 	<style>
 		html {
 		  scroll-behavior: smooth;
@@ -60,7 +83,45 @@
 		 	<img src="" id="photoURL">
 		 	<p id="displayName"></p>
 		    <!-- Button to close the popup -->
-		    <button class="JPO_close">X</button>
+			<button class="JPO_close">X</button>
+			<div id="header">
+				<img src="images/img40.png">
+				<h3>Registration | TechSummit '19</h3>
+			  </div>
+			  <div class="container">
+			  <img src="images/img40.png" class="rounded-circle profile-pic">
+			  <form action="/action_page.php">
+						<div class="form-group">
+					<label for="nm">Name</label>
+					  <div class="input-group-prepend">
+						  <div class="input-group-text" id="nm">Actual Name</div>
+					  </div>
+					</div>
+						<div class="form-group">
+						  <label for="email">E-mail</label>
+							<div class="input-group-prepend">
+								<div class="input-group-text" id="email">E-mail</div>
+							</div>
+						  </div>
+						<div class="form-group">
+						  <label for="yrst">Year of Study:</label>
+						  <input type="text" class="form-control" id="yrst">
+						</div>
+						<div class="form-group">
+						  <label for="city">City:</label>
+						  <input type="text" class="form-control" id="city">
+						</div>
+						<div class="form-group">
+						  <label for="college">College:</label>
+						  <input type="text" class="form-control" id="college">
+						</div>
+						<div class="form-group">
+						  <label for="phnno">Phone Number:</label>
+						  <input type="text" class="form-control" id="phnno">
+						</div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				</div>
 		 </div>
 		<div class="info-container">
 	        <div id="particles-js"></div>
