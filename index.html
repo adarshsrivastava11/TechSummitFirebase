@@ -44,7 +44,7 @@
 		  scroll-behavior: smooth;
 		}
 		.well {
-			background-color: #6c7283;
+			background-color: #222837;
 	        display:none;
 	        margin:1em;
 	        max-width: 1000px;
@@ -60,6 +60,7 @@
 	        border: 0;
 	        font-size: 25px;
 	        padding: 0 10px;
+	        background-color: #3f465f;
 	    }
 	</style>
 </head>
@@ -69,24 +70,24 @@
 		<div class="navbar" style="margin-left:9%">
 			<img class="logo-main" src="./images/logo-main.png">
 		</div>
-		 <div id="JPO" class="well">
-		 	<button disabled id="quickstart-sign-in">Log in with Facebook</button>
-		 	<button onclick="postData()">Post Data</button>
-		 	<button onclick="getData()">Get Data</button>
+		 <div id="JPO" class="well" style="align-self: center;">
+		 	<button id="quickstart-sign-in" class="btn btn-primary" style="background-color:#4267B2; "><i class="fab fa-facebook-f f"> &nbsp; Continue With Facebook </i> </button>
+		 	<!-- <button onclick="postData()">Post Data?</button> -->
+		 	<!-- <button onclick="getData()">Get Data</button> -->
 		    <!-- Button to close the popup -->
 			<button class="JPO_close">&times;</button>
 			<div id="header">
 				<img src="images/img40.png">
 				<h3>Dashboard</h3>
 			</div>
-			  <div class="container" style="color:#ffffff;">
+			  <div class="container" style="color:#afb2ed;">
 			  	<div class="row">
 			  		<div class="col-md-6">
 			  <img src="images/img40.png" width="500em" height="500em" id="photoURL" class="rounded-circle profile-pic">
 					<div class="form-group" >
 						<label for="nm">Name</label>
 						<div class="input-group-prepend">
-						  <div class="input-group-text" disabled id="displayName">Nam</div>
+						  <div class="input-group-text" disabled id="displayName">Name</div>
 					  </div>
 					</div>
 					<div class="form-group">
@@ -103,7 +104,7 @@
 					</div>
 					<div class="form-group">
 					  <label for="college">College:</label>
-					  <input type="text" class="form-control" id="college">
+					  <input type="text" class="form-control" id="college">	
 					</div>
 					<div class="form-group">
 					  <label for="phone">Phone Number:</label>
@@ -185,9 +186,9 @@
 		</div>
 		<div class="wrapper ghost">1</div> -->
 		<div class="card-deck">
-		<div :class="speaker.styling" style="width: 21rem; "  v-for="speaker in speakers">
-		  <img class="card-img-top" :src="speaker.image" style="height:300px; width:334px;">
-		  <div class="card-body " style="padding-bottom:0px !important;  ">
+		<div :class="speaker.styling" style="width: 21rem; height:406px; "  v-for="speaker in speakers">
+		  <img class="card-img-top" :src="speaker.image" style="height:280px; width:334px;">
+		  <div class="card-body " style="padding-bottom:0px !important; height:80px;  ">
 		    <h5 class="card-title" style="text-align: center;">{{ speaker.name }}</h5>
 		    <p class="card-text" style="text-align: center;">{{ speaker.position }}</p>
 		  </div>

@@ -126,7 +126,7 @@ function initApp() {
 	} else {
 	  // User is signed out.
 	  // [START_EXCLUDE]
-	  document.getElementById('quickstart-sign-in').textContent = 'Log in with Facebook';
+	  // document.getElementById('quickstart-sign-in').textContent = 'Continue With Facebook';
 	  // document.getElementById("submit").disabled = true;
 	  // [END_EXCLUDE]
 	}
