@@ -34,9 +34,6 @@
 			height: 50px;
 		  background-color: #222739;
 		}
-		body {
-		  background-color: rgb(217, 215, 231)
-		}
 		.profile-pic {
 		  width: 5%;
 		  height: 5%;
@@ -71,55 +68,55 @@
 	<section class="section-one">
 		<div class="navbar" style="margin-left:9%">
 			<img class="logo-main" src="./images/logo-main.png">
-			
-			<!-- <img class="logo-main" src="./images/logo-main.png"> -->
-			<!-- <i class="navicon fa fa-bars" aria="true">TechSummit</i>		 -->
 		</div>
 		 <div id="JPO" class="well">
 		 	<button disabled id="quickstart-sign-in">Log in with Facebook</button>
 		 	<button onclick="postData()">Post Data</button>
 		 	<button onclick="getData()">Get Data</button>
-		 	<img src="" id="photoURL">
-		 	<p id="displayName"></p>
 		    <!-- Button to close the popup -->
 			<button class="JPO_close">&times;</button>
 			<div id="header">
 				<img src="images/img40.png">
-				<h3>Registration | TechSummit '19</h3>
-			  </div>
-			  <div class="container"  style="color:#ffffff;">
-			  <img src="images/img40.png" class="rounded-circle profile-pic">
-			  <form action="/action_page.php">
-						<div class="form-group" >
-					<label for="nm">Name</label>
-					  <div class="input-group-prepend">
-						  <div class="input-group-text" id="nm">Actual Name</div>
+				<h3>Dashboard</h3>
+			</div>
+			  <div class="container" style="color:#ffffff;">
+			  	<div class="row">
+			  		<div class="col-md-6">
+			  <img src="images/img40.png" width="500em" height="500em" id="photoURL" class="rounded-circle profile-pic">
+					<div class="form-group" >
+						<label for="nm">Name</label>
+						<div class="input-group-prepend">
+						  <div class="input-group-text" disabled id="displayName">Nam</div>
 					  </div>
 					</div>
-						<div class="form-group">
-						  <label for="email">E-mail</label>
-							<div class="input-group-prepend">
-								<div class="input-group-text" id="email">E-mail</div>
-							</div>
-						  </div>
-						<div class="form-group">
-						  <label for="yrst">Year of Study:</label>
-						  <input type="text" class="form-control" id="yrst">
+					<div class="form-group">
+					  <label for="email">E-mail</label>
+						<div class="input-group-prepend">
+							<div class="input-group-text" disabled id="email">E-mail</div>
 						</div>
-						<div class="form-group">
-						  <label for="city">City:</label>
-						  <input type="text" class="form-control" id="city">
-						</div>
-						<div class="form-group">
-						  <label for="college">College:</label>
-						  <input type="text" class="form-control" id="college">
-						</div>
-						<div class="form-group">
-						  <label for="phnno">Phone Number:</label>
-						  <input type="text" class="form-control" id="phnno">
-						</div>
-				  <button type="submit" class="btn btn-primary">Submit</button><p></p>
-				</form>
+					  </div>
+					</div>
+					<div class="col-md-6">
+					<div class="form-group">
+					  <label for="city">City:</label>
+					  <input type="text" class="form-control" id="city">
+					</div>
+					<div class="form-group">
+					  <label for="college">College:</label>
+					  <input type="text" class="form-control" id="college">
+					</div>
+					<div class="form-group">
+					  <label for="phone">Phone Number:</label>
+					  <input type="text" class="form-control" id="phone">
+					</div>
+				  	<button class="btn btn-primary" onclick="postData()" id="submit">Submit</button>
+				  </div>
+				</div>
+				  	<p></p>
+				  	<div style="background-color: white; visibility: hidden;" id="payments">
+				  		<p>Hello World!</p>
+				  	</div>
+				  <p></p>
 				</div>
 		 </div>
 		<div class="info-container">

@@ -20,27 +20,33 @@ var photoURL = "";
 var displayName = "";
 var workshopDetails = "";
 function postData(){
-	// console.log(workshopDetails);
+	alert("Hi");
+	document.getElementById("payments").style.visibility = "visible";
   $.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
   {
     displayName: displayName,
-    city: "Duckburg",
     uid: uid,
-    college: "Koi Nai",
+    college: document.getElementById("college").value,
     email: email,
-    photoURL: photoURL
+    photoURL: photoURL,
+    phoneNumber: document.getElementById("phone").value
   },
   function(data,status){
     console.log(data);
     console.log(status);
+    if(status == "success"){
+    	document.getElementById("payments").style.visibility = "visible";
+    }
   });
 }
 
 function getData(){
   $.get("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/registrations?uid="+uid,
   function(data,status){
-    console.log(data);
-    console.log(status);
+  	var obj = JSON.parse(data);
+    document.getElementById("college").value = obj.college;
+    document.getElementById("phone").value = obj.phone;
+    document.getElementById("city").value = obj.city;
   });
 }
 
@@ -112,12 +118,16 @@ function initApp() {
 	  document.getElementById('quickstart-sign-in').textContent = 'Log out';
 	  document.getElementById('photoURL').src = photoURL;
 	  document.getElementById('displayName').textContent = displayName;
+	  document.getElementById("email").textContent = email;
+	  console.log(email);
+	  document.getElementById("submit").disabled = false;
 	  getData();
 	  // [END_EXCLUDE]
 	} else {
 	  // User is signed out.
 	  // [START_EXCLUDE]
 	  document.getElementById('quickstart-sign-in').textContent = 'Log in with Facebook';
+	  // document.getElementById("submit").disabled = true;
 	  // [END_EXCLUDE]
 	}
 	// [START_EXCLUDE]
