@@ -980,16 +980,29 @@ textarea:focus, input:focus, button:focus {
   margin: 0 auto;
 }
 
-.section-last .upper-crust .line-draw {
+.section-last .upper-crust .footer .line-draw {
   position: absolute;
-  left: 50%;
-  top: -100px;
-  width: 0.23em;
-  height: 200px;
+  left: 29%;
+  top: -50px;
+  width: 65em;
+  height: 3px;
   margin-top: 20px;
   margin-bottom: 10px;
   background-color: #F1629C;
   border-radius: 100px;
+}
+
+.section-last .upper-crust .journey-image .fa-facebook-f:hover {
+  color: red;
+}
+.section-last .upper-crust .journey-image .fa-youtube:hover {
+  color: red;
+}
+.section-last .upper-crust .journey-image .fa-instagram:hover {
+  color: red;
+}
+.section-last .upper-crust .journey-image .fa-twitter:hover {
+  color: red;
 }
 
 .section-last .upper-crust .journey-image {
@@ -1269,5 +1282,5 @@ textarea:focus, input:focus, button:focus {
   }
 }
 .fa-info-circle:hover{
-  color:white; 
+  color:white !important;
 }

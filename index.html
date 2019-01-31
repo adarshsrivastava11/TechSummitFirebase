@@ -192,7 +192,7 @@
 		    <h5 class="card-title" style="text-align: center; font-size: 27px;">{{ speaker.name }}</h5>
 		    <p class="card-text" style="text-align: center; height:1.5vw; " >{{ speaker.position }}</p>
 		    <p class="card-text" style="text-align: center; "><strong>{{ speaker.Organisation }}</strong> </p>
-		    <a :href="speaker.linkedin" target="_blank" class="card-link" style="padding-left: 135px; padding-bottom:3px;" ><i class="fab fa-linkedin-in fa-2x"></i></a>
+		    <a :href="speaker.linkedin" target="_blank" class="card-link" style="padding-left: 135px; padding-bottom:3px;" ><i class="fab fa-linkedin-in"></i></a>
 		  </div>
 		</div>
 	</div>
@@ -303,17 +303,17 @@
 
 	<section class="section-eight" id="Sponsers">
 		<div class="wrap-sponsers">
-			<h2>Our awesome sponsers</h2>
+			<h2>Our awesome sponsors</h2>
 			<div class="row">
 				<div class="col-sm-4" v-for="sponser in sponsers">
 					<img :src="sponser.image">
 				</div>
 			</div>
 			<div class="tagline-info">
-				Want to get involved and be a sponser,<br>
+				Want to get involved and be a sponsor,<br>
 				ready and join us!
 			</div>
-			<div class="button-container"><button class="circular">BECOME A SPONSER</button></div>
+			<div class="button-container"><button class="circular">BECOME A SPONSOR</button></div>
 			<div class="side-tag">
 				<div class="draw-line"></div>
 				<span>AN EVENT BY TECHKRITI</span>
@@ -325,7 +325,11 @@
 		<div class="upper-crust">
 			<div class="journey-image">
 				<img src="images/img40.png">
-				<h1 style="color: white;">&nbsp; Techkriti  &nbsp; &nbsp;IIT Kanpur</h1>
+				<br>
+				<font color ="white" face="Comic Sans Ms">
+					<span style="font-weight: 100;font-size: 20px;"><center>Techkriti, IIT Kanpur</center></span>
+				</font>
+				<br>
 				&emsp;&emsp;
 				<a href="https://www.facebook.com/techkriti.iitk" target="_blank">
 					<span style="color: white;"><i class="fab fa-facebook-f fa-2x"></i></span>
@@ -350,7 +354,10 @@
 				
 				<h3 style="">Techkriti | IIT Kanpur</h3>
 			</div> -->
-			<div class="footer">TechSummit summit is bought to you by Techkriti. All right reserved.</div>
+			<div class="footer">
+				<div class="line-draw"></div>
+				TechSummit summit is brought to you by Techkriti. All right reserved.
+			</div>
 		</div>
 		<div class="left-bottom"></div>
 	</section>
