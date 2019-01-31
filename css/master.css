@@ -666,11 +666,11 @@ textarea:focus, input:focus, button:focus {
 
 .section-five .xfive {
   top: 140px;
-  left: 64%;
+  left: 65%;
 }
 .section-five .xsix {
   top: 650px;
-  left: 64%;
+  left: 65%;
 }
 
 .section-five .xthree {
@@ -1120,7 +1120,7 @@ textarea:focus, input:focus, button:focus {
   }
   .section-five .wrapper {
     width: 100%;
-    min-height: 3100px !important;
+    min-height: 3200px !important;
   }
 
   @media (max-width: @screen-xs) {
