@@ -160,9 +160,9 @@
 					<div class="mod-content">
 						<span class="multiple-repeat-heading" > {{ intro.title }} <i class="fa fa-info-circle" aria-hidden="true" v-on:click="loadContent(intro)"></i> </span>
 						<div class="gap10px"></div>
-						<p class="multiple-repeat-info">
+						<!-- <p class="multiple-repeat-info">
 							{{ intro.info }}
-						</p>
+						</p> -->
 					</div>
 				</div>
 			</div>
@@ -186,16 +186,14 @@
 		</div>
 		<div class="wrapper ghost">1</div> -->
 		<div class="card-deck">
-		<div :class="speaker.styling" style="width: 21rem; height:406px; "  v-for="speaker in speakers">
-		  <img class="card-img-top" :src="speaker.image" style="height:280px; width:334px;">
-		  <div class="card-body " style="padding-bottom:0px !important; height:115px;  ">
-		    <h5 class="card-title" style="text-align: center;">{{ speaker.name }}</h5>
-		    <p class="card-text" style="text-align: center; height:1.2vw; " >{{ speaker.position }}</p>
+		<div :class="speaker.styling" style="width: 21rem; height:406px; border-radius: 50px;"  v-for="speaker in speakers">
+		  <img class="card-img-top" :src="speaker.image" style="height:310px; width:20rem; border-radius: 15%; margin-left: auto; margin-right: auto; margin-top:2%;">
+		  <div class="card-body " style="padding-bottom:0px !important; height:175px; border-radius: 50px;">
+		    <h5 class="card-title" style="text-align: center; font-size: 27px;">{{ speaker.name }}</h5>
+		    <p class="card-text" style="text-align: center; height:1.5vw; " >{{ speaker.position }}</p>
 		    <p class="card-text" style="text-align: center; "><strong>{{ speaker.Organisation }}</strong> </p>
+		    <a :href="speaker.linkedin" target="_blank" class="card-link" style="padding-left: 135px; padding-bottom:3px;" ><i class="fab fa-linkedin-in fa-2x"></i></a>
 		  </div>
-		  <div class="card-body">
-    		<a :href="speaker.linkedin" target="_blank" class="card-link" style="padding-left: 150px;" ><i class="fab fa-linkedin-in"></i></a>  		
-  		</div>
 		</div>
 	</div>
 	</div>
@@ -244,24 +242,23 @@
 	<div class="cntl-states container">
 		<div class="cntl-state">
 			<div class="cntl-content">
-				<h3 style="text-align: center;">DAY 1</h3>
 				<strong><div><p style="border-bottom: 2px solid black">Date: 8th March<br>Day: Friday</p></div></strong>
 				<ul>
 					<li>Summit Registration</li>
 					<li>Opening Ceremony<br><!-- <ol><li>Sandeep Shukla</li><li>Shailendra Kumar</li></ol> --></li>
 					<li>Workshop 1</li>
 					<li>Lunch</li>
+					<strong><li>High Tea (Networking)</li></strong>
 					<li>Workshop 2</li>
 				</ul>
 			</div>
 			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fground.png?alt=media&token=15f07985-18c9-4724-a01e-c67708fe4895"></div>
-			<div class="cntl-icon cntl-center">'00</div>
+			<div class="cntl-icon cntl-center">DAY 1</div>
 		</div>
 
 
 		<div class="cntl-state">
 			<div class="cntl-content">
-				<h3 style="text-align: center;">DAY 2</h3>
 				<strong><div><p style="border-bottom: 2px solid black">Date: 9th March<br>Day: Saturday</p></div></strong>
 				<ul>
 					<li>Workshop 3</li>
@@ -274,22 +271,22 @@
 			</div>
 
 			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Flibrary.png?alt=media&token=f1d4c5d0-b188-43d1-a124-f905bf0542c8"></div>
-			<div class="cntl-icon cntl-center">'03</div>
+			<div class="cntl-icon cntl-center">DAY 2</div>
 		</div>
 
 		<div class="cntl-state">
 			<div class="cntl-content">
-				<h3 style="text-align: center;">DAY 3</h3>
 				<strong><div><p style="border-bottom: 2px solid black">Date: 10th March<br>Day: Sunday</p></div></strong>
 				<ul>
 					<li>Talk 4: Rahul Tyagi</li>
 					<li>Talk 5</li>
+					<strong><li>High Tea (Networking)</li></strong>
 					<li>Pannel Discussion 2</li>
 				</ul>
 			</div>
 
 			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhostel.png?alt=media&token=f4ba3650-3886-475d-b7be-d1a0797700b2"></div>
-			<div class="cntl-icon cntl-center">'04</div>
+			<div class="cntl-icon cntl-center">DAY 3</div>
 		</div>
 
 		<div class="cntl-state">
@@ -298,7 +295,7 @@
 			</div>
 
 			<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhall2.png?alt=media&token=0b3febbd-3a30-49eb-a383-0b32bc8195f8"></div>
-			<div class="cntl-icon cntl-center">'07</div>
+			<div class="cntl-icon cntl-center">DAY 3</div>
 		</div>
 	</div></div>
 
