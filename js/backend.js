@@ -19,9 +19,29 @@ var email = "";
 var photoURL = "";
 var displayName = "";
 var workshopDetails = "";
+function dashboard(){
+	Swal.fire({
+  title: 'Are you sure?',
+   html:'<img src="images/img40.png" id="photoURL" class="rounded-circle profile-pic"><div class="form-group" > <label for="nm">Name</label><div class="input-group-prepend"><div class="input-group-text" disabled id="displayName">Name</div></div></div><div class="form-group"> <label for="email">E-mail</label><div class="input-group-prepend"><div class="input-group-text" disabled id="email">E-mail</div></div></div><div class="form-group"> <label for="city">City:</label> <input type="text" class="form-control" id="city"></div><div class="form-group"> <label for="college">College:</label> <input type="text" class="form-control" id="college"></div><div class="form-group"> <label for="phone">Phone Number:</label> <input type="text" class="form-control" id="phone"></div> <button class="btn btn-primary" onclick="postData()" id="submit">Submit</button><p></p>',
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+})
+}
 function postData(){
 	alert("Hi");
 	document.getElementById("payments").style.visibility = "visible";
+	
   $.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
   {
     displayName: displayName,
