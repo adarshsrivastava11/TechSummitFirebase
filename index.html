@@ -188,9 +188,10 @@
 		<div class="card-deck">
 		<div :class="speaker.styling" style="width: 21rem; height:406px; "  v-for="speaker in speakers">
 		  <img class="card-img-top" :src="speaker.image" style="height:280px; width:334px;">
-		  <div class="card-body " style="padding-bottom:0px !important; height:80px;  ">
+		  <div class="card-body " style="padding-bottom:0px !important; height:115px;  ">
 		    <h5 class="card-title" style="text-align: center;">{{ speaker.name }}</h5>
-		    <p class="card-text" style="text-align: center;">{{ speaker.position }}</p>
+		    <p class="card-text" style="text-align: center; height:1.2vw; " >{{ speaker.position }}</p>
+		    <p class="card-text" style="text-align: center; "><strong>{{ speaker.Organisation }}</strong> </p>
 		  </div>
 		  <div class="card-body">
     		<a :href="speaker.linkedin" target="_blank" class="card-link" style="padding-left: 150px;" ><i class="fab fa-linkedin-in"></i></a>  		
