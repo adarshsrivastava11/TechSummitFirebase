@@ -1,0 +1,87 @@
+.speakers-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.speaker-card {
+    /* width: 300px; */
+    background: #fafafa;
+    margin: 0.75em 1em;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px -3px rgba(46,74,117,1);
+    transition: 0.4s;
+}
+.speaker-card img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.speaker-card .speaker-details {
+    text-align: center;
+    padding: 0.7em 1.2em;
+}
+.speakers-heading {
+    font-size: 3em;
+    padding: 0.5em 0;
+    color: white;
+    text-align: center;
+}
+.speakers-list {
+    width: 80%;
+    margin: auto;
+}
+.speaker-card .designation {
+    color: darkgray;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+.speaker-card .company {
+    font-size: 1.2em;
+}
+.speaker-card:hover {
+    box-shadow: 0px 0px 40px -5px rgba(46,74,117,1);
+    transform: scale(1.01);
+    transition: 0.4s;
+}
+.workshops-heading {
+    padding: 1em 0;
+}
+.screen {
+    min-height: 105vh;
+}
+
+.schedule-heading {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 600;
+    padding-top: 0.3em;
+}
+
+.sponsors-heading {
+    font-size: 2.3px;
+    text-align: center;
+    color: #31374F;
+    font-weight: 700;
+    padding-bottom: 40px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.sponsors-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sponsors-list > div {
+    width: auto;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.sponsors-list img {
+    max-width: 230px;
+}
