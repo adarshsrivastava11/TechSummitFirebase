@@ -81,16 +81,16 @@
 			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
 
 			<div class="button-container">
-				<button id="quickstart-sign-in" class="circular" style="pointer-events: all;"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
+				<button id="quickstart-sign-in" class="circular shad" style="pointer-events: all; cursor: pointer;"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
 			</div>
 
-			<div class="button-container"  style="pointer-events: all;"><button class="circular" onclick="showModal('#dashboard')">
+			<div class="button-container"><button class="circular shad" style="pointer-events: all; cursor: pointer;" onclick="showModal('#dashboard')">
 				<i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button>
 			</div>
 
 			<div class="button-container">
 				<a href="#Speakers">
-					<button class="circular"  style="pointer-events: all;">
+					<button class="circular shad"  style="pointer-events: all; cursor: pointer;">
 						<i class="fas fa-microphone"></i> | SEE LINEUP
 					</button>
 				</a>
@@ -124,7 +124,7 @@
 				<div class="multiple-repeat" v-for="intro in intros">
 					<div class="multiple-repeat-number">{{ intro.number }}.</div>
 					<div class="mod-content">
-						<span class="multiple-repeat-heading"> {{ intro.title }} <i class="fa fa-info-circle" aria-hidden="true"
+						<span class="multiple-repeat-heading"> {{ intro.title }} <i class="fa fa-info-circle shad" aria-hidden="true" style="cursor: pointer;"
 							 v-on:click="loadContent(intro)"></i> </span>
 						<div class="gap10px"></div>
 						<!-- <p class="multiple-repeat-info">
@@ -290,8 +290,8 @@
 				Want to get involved and be a sponsor,<br>
 				ready and join us!
 			</div>
-			<div class="button-container"><button class="circular">BECOME A SPONSOR</button></div>
-			<div class="button-container"><a href="https://techkriti.org/contact-us" target="_blank"><button class="circular">CONTACT US</button></a></div>
+			<div class="button-container"><button class="circular shad" style="cursor: pointer;">BECOME A SPONSOR</button></div>
+			<div class="button-container"><a href="https://techkriti.org/contact-us" target="_blank"><button class="circular shad" style="cursor: pointer;">CONTACT US</button></a></div>
 			<div class="side-tag">
 				<div class="draw-line"></div>
 				<span>AN EVENT BY TECHKRITI</span>

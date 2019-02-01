@@ -16,6 +16,10 @@ textarea:focus, input:focus, button:focus {
   outline: none;
 }
 
+.shad:hover {
+  box-shadow: 0 0 11px #613C8C;
+}
+
 .card-body
 {
   background: #FAFAFA !important;
