@@ -24,12 +24,17 @@ function showModal(modal) {
     $(modal).iziModal('open');
 }
 
+function selectWorkshop() {
+	workshopDetails = document.getElementById("sel1").value;
+	document.getElementById("selectedWorkshop").textContent = "You have selected "+workshopDetails+" workshop";
+}
+
 function payWorkshopFees() {
 	const eventcode = 'techsummitworkshop-34003';
 	const payPrefill = {
 		cq1: uid,	// custom question 1
 		cq2: document.getElementById("phone").value,
-		cq3: 'Sample Workshop',
+		cq3: workshopDetails,
 		emailid: email,
 		name: displayName
 	};
@@ -39,50 +44,54 @@ function payWorkshopFees() {
 function payAccomodation() {
 	const eventcode = 'techsummit-accomodation-fees-434033';
 	const payPrefill = {
-		cq1: '123',	// custom question 1
-		cq2: `+912134`,
-		emailid: 'asdf@askdlfj.cm',
-		name: 'name name'
+		cq1: uid,	// custom question 1
+		cq2: document.getElementById("phone").value,
+		cq3: workshopDetails,
+		emailid: email,
+		name: displayName
 	};
 	payPrefill['eventcode'] = eventcode;
 	popupWithAutoFill(payPrefill);
 }
 
 function postData(){
-	$.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
-	  {
-	    displayName: displayName,
-	    uid: uid,
-	    college: document.getElementById("college").value,
-	    city: document.getElementById("city").value,
-	    email: email,
-	    photoURL: photoURL,
-	    phoneNumber: document.getElementById("phone").value
-	  },
-	  function(data,status){
-	    console.log(data);
-	    console.log(status);
-	    if(status == "success"){
-	    	alert("Registration Successful");
-	    }
-  });
+	if(workshopDetails == "W0")
+		alert("Please Select a Workshop!");
+	else {
+		$.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
+		  {
+		    displayName: displayName,
+		    uid: uid,
+		    college: document.getElementById("college").value,
+		    city: document.getElementById("city").value,
+		    email: email,
+		    photoURL: photoURL,
+		    phoneNumber: document.getElementById("phone").value,
+		    workshop: workshopDetails
+		  },
+		  function(data,status){
+		    console.log(data);
+		    console.log(status);
+		    if(status == "success"){
+		    	alert("Registration Successful");
+		    	document.getElementById("paymentButtons").style.display="block";
+		    	document.getElementById("submit").disabled = true;
+		    }
+	  });
+	}
 }
 
-db.collection("users").doc(uid)
-    .onSnapshot(function(doc) {
-    	response = doc.data();
-    	if(response.paidWorkshop == undefined)
-    		document.getElementById("paymentStatus").textContent = "Kuch nai diya tune abhi tak madarchod";
-        console.log("Current data: ", doc.data());
-});
+
 
 function getData(){
   $.get("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/registrations?uid="+uid,
   function(data,status){
-  	console.log(data.data.phoneNumber);
-    document.getElementById("college").value = data.data.college;
-    document.getElementById("phone").value = data.data.phoneNumber;
-    document.getElementById("city").value = data.data.city;
+  	console.log(data);
+  	if (data.data != "404") {
+	    document.getElementById("college").value = data.data.college;
+	    document.getElementById("phone").value = data.data.phoneNumber;
+	    document.getElementById("city").value = data.data.city;
+	}
   });
 }
 
@@ -100,7 +109,7 @@ function toggleSignIn() {
 	  // The signed-in user info.
 	  var user = result.user;
 	  // [START_EXCLUDE]
-	  document.getElementById('quickstart-oauthtoken').textContent = token;
+	  // document.getElementById('quickstart-oauthtoken').textContent = token;
 	  // [END_EXCLUDE]
 	}).catch(function(error) {
 	  // Handle Errors here.
@@ -155,8 +164,31 @@ function initApp() {
 	  document.getElementById('photoURL').src = photoURL;
 	  document.getElementById('displayName').value = displayName;
 	  document.getElementById("email").value = email;
-	  document.getElementById("submit").disabled = false;
 	  getData();
+	  db.collection("users").doc(uid)
+	    .onSnapshot(function(doc) {
+	    	response = doc.data();
+	    	console.log(response);
+	    	if(response.paidWorkshop == true && (response.paidHospi == undefined || response.paidHospi == false)){
+	    		document.getElementById("paymentStatus").textContent = "You paid workshop fees, Please pay the Accomadation Fees to complete the process.";
+	    		document.getElementById("paymentButtons").style.display="block";
+	    		document.getElementById("workshopFees").style.display = "none";
+	    		document.getElementById("accomodationFees").style.display = "inline";
+	    	}
+	    	if(response.paidHospi == true && (response.paidWorkshop == undefined || response.paidWorkshop == false)){
+	    		document.getElementById("paymentStatus").textContent = "You paid Accomadation fees, Please pay the Workshop Fees to complete the process.";
+	    		document.getElementById("paymentButtons").style.display = "block";
+	    		document.getElementById("workshopFees").style.display = "inline";
+	    		document.getElementById("accomodationFees").style.display = "none";
+	    	}
+	    	if(response.paidWorkshop == true && response.paidHospi == true){
+	    	    document.getElementById("paymentStatus").textContent = "Your Payment Process is Done! See you at the Summit";
+	    	    document.getElementById("workshopFees").style.display = "none";
+	    	    document.getElementById("accomadationFees").style.display = "none";
+	    	    document.getElementById("yes-registration").style.display = "block";
+	    	    document.getElementById("no-registration").style.display = "none";
+	    	}
+	});
 	  // [END_EXCLUDE]
 	} else {
 	  // User is signed out.

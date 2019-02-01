@@ -81,11 +81,11 @@
 			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
 
 			<div class="button-container">
-				<button id="quickstart-sign-in" class="circular" style="pointer-events: all;"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
+				<button id="quickstart-sign-in" class="circular" style="pointer-events: all;"><i class="fa fa-user-plus" aria-hidden="true"></i> | LOGIN WITH FACEBOOK</button>
 			</div>
 
-			<div class="button-container"  style="pointer-events: all;"><button class="circular" onclick="showModal('#dashboard')">
-				<i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button>
+			<div class="button-container" id="dashboardButtonMain"  style="pointer-events: all;"><button class="circular" onclick="showModal('#dashboard')">
+				<i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER</button>
 			</div>
 
 			<div class="button-container">
@@ -286,11 +286,11 @@
 					<img :src="sponser.image">
 				</div>
 			</div>
-			<div class="tagline-info">
+			<!-- <div class="tagline-info">
 				Want to get involved and be a sponsor,<br>
 				ready and join us!
 			</div>
-			<div class="button-container"><button class="circular">BECOME A SPONSOR</button></div>
+			<div class="button-container"><button class="circular">BECOME A SPONSOR</button></div> -->
 			<div class="button-container"><a href="https://techkriti.org/contact-us" target="_blank"><button class="circular">CONTACT US</button></a></div>
 			<div class="side-tag">
 				<div class="draw-line"></div>
@@ -327,16 +327,9 @@
 					<span style="color: white;"><i class="fab fa-youtube fa-2x"></i></span>
 				</a>
 			</div>
-			<!-- <div class="col-lg-4 col-md-4 col-sm-6" style=" text-align: center;">
-			<h1 style="color: white;">Techkriti | IIT Kanpur</h1>
-			</div> -->
-			<!-- <div class="input-box">
-				
-				<h3 style="">Techkriti | IIT Kanpur</h3>
-			</div> -->
 			<div class="footer">
 				<div class="line-draw"></div>
-				TechSummit summit is brought to you by Techkriti. All right reserved.
+				TechSummit is brought to you by Techkriti. All right reserved.
 			</div>
 		</div>
 		<div class="left-bottom"></div>
@@ -363,24 +356,36 @@
 					<div class="input-block">
 						<input type="text" id="city" placeholder="College City">
 					</div>
+					<div class="input-block">
+				      <select class="form-control" id="sel1" onchange="selectWorkshop()">
+				      	<option value="W0">Choose One Workshop</option>
+				        <option value="IoT">IoT (Internet of Things):</option>
+				        <option value="Visual Deep Learning">Visual Deep Learning</option>
+				        <option value="Blockchain">Blockchain</option>
+				        <option value="Cloud Computing">Cloud Computing</option>
+				      </select>
+					</div>
 					<button class="submit-button" onclick="postData()">
 						<i class="fa fa-check" id="submit" aria-hidden="true"></i> SUBMIT
 					</button>
 				</div>
 				<div class="registration">
-					<div class="yes-registration">
+
+					<div class="yes-registration" id="yes-registration" style="display: none;">
 						<span style="font-size: 0.75em">You have registered for</span>
 						<div class="workshop-title">Test workshop</div>
-						<div class="date">Soon</div>
+						
+					</div>
+					<div class="yes-registration">
 						<div class="status" id="paymentStatus">Need to pay the accomodation fees</div>
-						<div class="action-buttons">
-							<button class="pay-workshop tsbutton" onclick="payWorkshopFees()">Pay workshop fees</button>
+						<div class="action-buttons" id="paymentButtons" style="display: none;">
+							<button class="pay-workshop tsbutton" id="workshopFees" onclick="payWorkshopFees()">Pay workshop fees</button>
 							+
-							<button class="pay-accomodation tsbutton" onclick="payAccomodation()">Pay accomodation fees</button>
+							<button class="pay-accomodation tsbutton" id="accomodationFees" onclick="payAccomodation()">Pay accomodation fees</button>
 						</div>
 					</div>
-					<div class="no-registration">
-						<h4>You have not registered for any workshop yet!</h4>
+					<div class="no-registration" id="no-registration">
+						<h4 id="selectedWorkshop">You have not selected for any workshop yet!</h4>
 						<div>
 							<button class="view-workshops">View all workshops</button>
 						</div>
@@ -389,10 +394,10 @@
 			</div>
 		</div>
 	</div>
-	<div id="sticky-login-button">
-		<button><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
+	<div id="sticky-login-button" >
+		<button><i class="fa fa-user-plus" aria-hidden="true"></i> | LOGIN WITH FACEBOOK</button>
 	</div>
-	<div id="sticky-dashboard-button">
+	<div id="sticky-dashboard-button" id="dashboardButtonFloating">
 		<button onclick="showDashboard()"><i class="fa fa-user-circle" aria-hidden="true"></i> | DASHBOARD</button>
 	</div>
 	<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js"></script>
@@ -404,26 +409,6 @@
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="./lib/jquery.cntl.js"></script>
 	<script>
-		$(document).ready(function () {
-
-			$('#JPO').popup({
-				background: false,
-				horizontal: 'right',
-				vertical: 'bottom',
-				keepfocus: false,
-				autozindex: true,
-				blur: true
-			});
-			$('.cntl').cntl({
-				revealbefore: 300,
-				anim_class: 'cntl-animate',
-				onreveal: function (e) {
-					console.log(e);
-				}
-			});
-			// Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
-			//$.fn.popup.defaults.pagecontainer = '#page'
-		});
 		$(window).scroll(function() {
 			if($(window).scrollTop() > window.innerHeight) {
 				document.getElementById('sticky-login-button').classList.add('visible');
