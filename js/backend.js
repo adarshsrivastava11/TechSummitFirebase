@@ -19,11 +19,18 @@ var email = "";
 var photoURL = "";
 var displayName = "";
 var workshopDetails = "";
+var showingDashboard = false;
 
+function showDashboard(show) {
+	if (show === showingDashboard) {
+		return;
+	}
+	showingDashboard = !showingDashboard;
+}
 function dashboard(){
 	Swal.fire({
   title: 'Are you sure?',
-   html:'<img src="images/img40.png" id="photoURL" class="profile-pic"><div class="form-group" > <label for="nm">Name</label><div class="input-group-prepend"><div class="input-group-text" disabled id="displayName">Name</div></div></div><div class="form-group"> <label for="email">E-mail</label><div class="input-group-prepend"><div class="input-group-text" disabled id="email">E-mail</div></div></div><div class="form-group"> <label for="city">City:</label> <input type="text" class="form-control" id="city"></div><div class="form-group"> <label for="college">College:</label> <input type="text" class="form-control" id="college"></div><div class="form-group"> <label for="phone">Phone Number:</label> <input type="text" class="form-control" id="phone"></div><p></p>',
+	html:'<img src="images/img40.png" id="photoURL" class="profile-pic"><div class="form-group"><label for="nm">Name</label><div class="input-group-prepend"><div class="input-group-text" disabled id="displayName">Name</div></div></div><div class="form-group"> <label for="email">E-mail</label><div class="input-group-prepend"><div class="input-group-text" disabled id="email">E-mail</div></div></div><div class="form-group"> <label for="city">City:</label> <input type="text" class="form-control" id="city"></div><div class="form-group"> <label for="college">College:</label> <input type="text" class="form-control" id="college"></div><div class="form-group"> <label for="phone">Phone Number:</label> <input type="text" class="form-control" id="phone"></div><p></p>',
   type: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',

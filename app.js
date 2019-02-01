@@ -129,5 +129,6 @@ particlesJS('particles-js',
       "background_size": "cover"
     }
   }
-
 );
+
+$("#dashboard").iziModal();

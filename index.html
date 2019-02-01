@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
 	<link rel="shortcut icon" type="image/png" href="images/img40.png"/>
-	<title>TechSummit'19 | Techkriti</title>
+	<title>TechSummit | Techkriti'19</title>
 	<meta name="author" content="Techkriti Web Team 2019">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	 crossorigin="anonymous">
@@ -19,6 +19,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="css/styles2.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css">
 	<link rel="stylesheet" type="text/css" href="./lib/cntl.css">
 	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
 	<script src="js/backend.js"></script>
@@ -72,15 +73,77 @@
 			<img class="logo-main" src="./images/logo-main.png">
 		</div>
 
+		<div id="JPO" class="well" style="align-self: center;">
+			<button id="quickstart-sign-in" class="btn btn-primary" style="background-color:#4267B2; "><i class="fab fa-facebook-f f">
+					&nbsp; Continue With Facebook </i> </button>
+			<button class="JPO_close">&times;</button>
+			<div id="header">
+				<img src="images/img40.png">
+				<h3>Dashboard</h3>
+			</div>
+			<div class="container" style="color:#afb2ed;">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="images/img40.png" width="500em" height="500em" id="photoURL" class="rounded-circle profile-pic">
+						<div class="form-group">
+							<label for="nm">Name</label>
+							<div class="input-group-prepend">
+								<div class="input-group-text" disabled id="displayName">Name</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email">E-mail</label>
+							<div class="input-group-prepend">
+								<div class="input-group-text" disabled id="email">E-mail</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="city">City:</label>
+							<input type="text" class="form-control" id="city">
+						</div>
+						<div class="form-group">
+							<label for="college">College:</label>
+							<input type="text" class="form-control" id="college">
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone Number:</label>
+							<input type="text" class="form-control" id="phone">
+						</div>
+						<button class="btn btn-primary" onclick="postData()" id="submit">Submit</button>
+					</div>
+				</div>
+				<p></p>
+				<div style="background-color: white; visibility: hidden;" id="payments">
+					<p>Hello World!</p>
+				</div>
+				<p></p>
+			</div>
+		</div>
 		<div class="info-container">
 			<div id="particles-js"></div>
 			<p class="p-date"><strong>8 - 10 March 2019</strong></p>
 			<p id="typing" style="padding-left:4%">Industry 4.0</p>
 			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
 
-			<div class="button-container"><button id="quickstart-sign-in" class="circular"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button></div>
-			<div class="button-container"><button class="circular" onclick="dashboard()"><i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button></div>
-			<div class="button-container"><a href="#Speakers"> <button class="circular"><i class="fas fa-microphone"></i> | SEE LINEUP</button> </a></div>
+			<div class="button-container">
+				<button id="quickstart-sign-in" class="circular"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
+			</div>
+
+			<a href="#" data-izimodal-open="#dashboard" data-izimodal-transitionin="fadeInDown">
+				<div class="button-container"><button class="circular">
+					<i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button>
+				</div>
+			</a>
+
+			<div class="button-container">
+				<a href="#Speakers">
+					<button class="circular">
+						<i class="fas fa-microphone"></i> | SEE LINEUP
+					</button>
+				</a>
+			</div>
 		</div>
 	</section>
 
@@ -327,9 +390,45 @@
 		<div class="left-bottom"></div>
 	</section>
 
+	<div id="dashboard">
+		<div class="dashboard-container">
+			<h2>Dashboard</h2>
+			<div class="bottom">
+				<div class="details">
+					<div class="input-block">
+						<input type="text" placeholder="Your full name">
+					</div>
+					<div class="input-block">
+						<input type="text" placeholder="Email address">
+					</div>
+					<div class="input-block">
+						<input type="text" placeholder="Your mobile number">
+					</div>
+					<div class="input-block">
+						<input type="text" placeholder="College Name">
+					</div>
+					<div class="input-block">
+						<input type="text" placeholder="College City">
+					</div>
+					<button class="submit-button">
+						<i class="fa fa-check" aria-hidden="true"></i> SUBMIT
+					</button>
+				</div>
+				<div class="registered-workshops">
+					<div class="workshop">
+						<div class="workshop-title">Test workshop</div>
+						<div class="date">Soon</div>
+						<div class="status">Need to pay the accomodation fees</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<script src="js/script.js"></script>
 	<script type="text/javascript" src="particles.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="./lib/jquery.cntl.js"></script>

@@ -85,3 +85,35 @@
 .sponsors-list img {
     max-width: 230px;
 }
+
+/* Copied from SCSS */
+#dashboard .dashboard-container {
+  padding: 1.2em;
+}
+#dashboard .dashboard-container .bottom {
+  display: flex;
+}
+#dashboard .dashboard-container .input-block {
+  margin: 0.7em 0;
+}
+#dashboard .dashboard-container .input-block input {
+  border: solid 1.5px gray;
+  padding: 0.7em 1em;
+  color: gray;
+}
+#dashboard .dashboard-container .submit-button {
+  background: #b200f4;
+  color: white;
+  height: 2.5em;
+  border-radius: 1.25em;
+}
+#dashboard .dashboard-container .registered-workshops .workshop {
+  border: 1px solid gray;
+  padding: 1em;
+}
+#dashboard .dashboard-container .registered-workshops .workshop .date {
+  color: darkgray;
+  font-weight: 600;
+  font-size: 0.85em;
+}
+  /* End copied from scss */
