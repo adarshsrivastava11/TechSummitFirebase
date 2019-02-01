@@ -87,33 +87,62 @@
 }
 
 /* Copied from SCSS */
-#dashboard .dashboard-container {
-  padding: 1.2em;
-}
-#dashboard .dashboard-container .bottom {
-  display: flex;
-}
-#dashboard .dashboard-container .input-block {
-  margin: 0.7em 0;
-}
-#dashboard .dashboard-container .input-block input {
-  border: solid 1.5px gray;
-  padding: 0.7em 1em;
-  color: gray;
-}
-#dashboard .dashboard-container .submit-button {
-  background: #b200f4;
-  color: white;
-  height: 2.5em;
-  border-radius: 1.25em;
-}
-#dashboard .dashboard-container .registered-workshops .workshop {
-  border: 1px solid gray;
-  padding: 1em;
-}
-#dashboard .dashboard-container .registered-workshops .workshop .date {
-  color: darkgray;
-  font-weight: 600;
-  font-size: 0.85em;
-}
+#dashboard {
+    width: 70vw;
+  }
+  #dashboard .dashboard-container {
+    padding: 1.2em;
+  }
+  #dashboard .dashboard-container .bottom {
+    display: flex;
+  }
+  #dashboard .dashboard-container .input-block {
+    margin: 0.7em 0;
+  }
+  #dashboard .dashboard-container .input-block input {
+    border: solid 1.5px gray;
+    padding: 0.7em 1em;
+    color: gray;
+  }
+  #dashboard .dashboard-container .submit-button {
+    background: #b200f4;
+    color: white;
+    height: 2.5em;
+    border-radius: 1.25em;
+    border: none;
+    padding: 0 1em;
+    cursor: pointer;
+  }
+  #dashboard .dashboard-container .registration {
+    padding: 0.5em 1.2em;
+    margin: 1.2em 0;
+  }
+  #dashboard .dashboard-container .registration .yes-registration .workshop-title {
+    font-size: 1.5em;
+  }
+  #dashboard .dashboard-container .registration .yes-registration .date {
+    color: darkgray;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  #dashboard .dashboard-container .registration .yes-registration .pay-accomodation, #dashboard .dashboard-container .registration .yes-registration .pay-workshop {
+    color: white;
+    cursor: pointer;
+    border: none;
+    height: 2.5em;
+    border-radius: 1.25em;
+    margin: auto;
+    background: #9768ce;
+    padding: 0 1em;
+  }
+  #dashboard .dashboard-container .registration .no-registration .view-workshops {
+    color: white;
+    cursor: pointer;
+    border: none;
+    height: 2.5em;
+    border-radius: 1.25em;
+    margin: auto;
+    background: #9768ce;
+    padding: 0 1em;
+  }
   /* End copied from scss */

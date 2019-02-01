@@ -82,11 +82,9 @@
 				<button id="quickstart-sign-in" class="circular"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
 			</div>
 
-			<a href="#" data-izimodal-open="#dashboard" data-izimodal-transitionin="fadeInDown">
-				<div class="button-container"><button class="circular">
-					<i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button>
-				</div>
-			</a>
+			<div class="button-container"><button class="circular" onclick="showModal('#dashboard')">
+				<i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button>
+			</div>
 
 			<div class="button-container">
 				<a href="#Speakers">
@@ -365,11 +363,23 @@
 						<i class="fa fa-check" aria-hidden="true"></i> SUBMIT
 					</button>
 				</div>
-				<div class="registered-workshops">
-					<div class="workshop">
+				<div class="registration">
+					<div class="yes-registration">
+						<span style="font-size: 0.75em">You have registered for</span>
 						<div class="workshop-title">Test workshop</div>
 						<div class="date">Soon</div>
 						<div class="status">Need to pay the accomodation fees</div>
+						<div class="action-buttons">
+							<button class="pay-workshop" onclick="payWorkshopFees()">Pay workshop fees</button>
+							+
+							<button class="pay-accomodation" onclick="payAccomodation()">Pay accomodation fees</button>
+						</div>
+					</div>
+					<div class="no-registration">
+						<h4>You have not registered for any workshop yet!</h4>
+						<div>
+							<button class="view-workshops">View all workshops</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -379,6 +389,7 @@
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<script src="js/script.js"></script>
 	<script type="text/javascript" src="particles.js"></script>
+	<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>

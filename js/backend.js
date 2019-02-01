@@ -19,13 +19,32 @@ var email = "";
 var photoURL = "";
 var displayName = "";
 var workshopDetails = "";
-var showingDashboard = false;
 
-function showDashboard(show) {
-	if (show === showingDashboard) {
-		return;
-	}
-	showingDashboard = !showingDashboard;
+function showModal(modal) {
+    $(modal).iziModal('open');
+}
+
+function payWorkshopFees() {
+	const eventcode = 'techkriti19-accomodation-fees-434033';
+	const payPrefill = {
+		cq1: '123',	// custom question 1
+		cq2: `+912134`,
+		emailid: 'asdf@askdlfj.cm',
+		name: 'name name'
+	};
+	payPrefill['eventcode'] = eventcode;
+	popupWithAutoFill(payPrefill);
+}
+function payAccomodation() {
+	const eventcode = 'techkriti19-434033';
+	const payPrefill = {
+		cq1: '123',	// custom question 1
+		cq2: `+912134`,
+		emailid: 'asdf@askdlfj.cm',
+		name: 'name name'
+	};
+	payPrefill['eventcode'] = eventcode;
+	popupWithAutoFill(payPrefill);
 }
 function dashboard(){
 	Swal.fire({
