@@ -74,23 +74,23 @@
 		<div class="navbar" style="margin-left:9%">
 			<img class="logo-main" src="./images/logo-main.png">
 		</div>
-		<div class="info-container">
-			<div id="particles-js"></div>
+		<div class="info-container" style="pointer-events: none;">
+			<div id="particles-js" style="pointer-events: all;"></div>
 			<p class="p-date"><strong>8 - 10 March 2019</strong></p>
 			<p id="typing" style="padding-left:4%">Industry 4.0</p>
 			<p class="p-description">Bring about the 4th Industrial Revolution.</p>
 
 			<div class="button-container">
-				<button id="quickstart-sign-in" class="circular"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
+				<button id="quickstart-sign-in" class="circular" style="pointer-events: all;"><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
 			</div>
 
-			<div class="button-container"><button class="circular" onclick="showModal('#dashboard')">
+			<div class="button-container"  style="pointer-events: all;"><button class="circular" onclick="showModal('#dashboard')">
 				<i class="fa fa-user-plus" aria-hidden="true"></i> | DASHBOARD</button>
 			</div>
 
 			<div class="button-container">
 				<a href="#Speakers">
-					<button class="circular">
+					<button class="circular"  style="pointer-events: all;">
 						<i class="fas fa-microphone"></i> | SEE LINEUP
 					</button>
 				</a>
@@ -291,6 +291,7 @@
 				ready and join us!
 			</div>
 			<div class="button-container"><button class="circular">BECOME A SPONSOR</button></div>
+			<div class="button-container"><a href="https://techkriti.org/contact-us" target="_blank"><button class="circular">CONTACT US</button></a></div>
 			<div class="side-tag">
 				<div class="draw-line"></div>
 				<span>AN EVENT BY TECHKRITI</span>
