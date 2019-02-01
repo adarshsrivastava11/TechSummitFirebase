@@ -25,18 +25,19 @@ function showModal(modal) {
 }
 
 function payWorkshopFees() {
-	const eventcode = 'techkriti19-accomodation-fees-434033';
+	const eventcode = 'techsummitworkshop-34003';
 	const payPrefill = {
-		cq1: '123',	// custom question 1
-		cq2: `+912134`,
-		emailid: 'asdf@askdlfj.cm',
-		name: 'name name'
+		cq1: uid,	// custom question 1
+		cq2: document.getElementById("phone").value,
+		cq3: 'Sample Workshop',
+		emailid: email,
+		name: displayName
 	};
 	payPrefill['eventcode'] = eventcode;
 	popupWithAutoFill(payPrefill);
 }
 function payAccomodation() {
-	const eventcode = 'techkriti19-434033';
+	const eventcode = 'techsummit-accomodation-fees-434033';
 	const payPrefill = {
 		cq1: '123',	// custom question 1
 		cq2: `+912134`,
@@ -46,76 +47,42 @@ function payAccomodation() {
 	payPrefill['eventcode'] = eventcode;
 	popupWithAutoFill(payPrefill);
 }
-function dashboard(){
-	Swal.fire({
-  title: 'Are you sure?',
-	html:'<img src="images/img40.png" id="photoURL" class="profile-pic"><div class="form-group"><label for="nm">Name</label><div class="input-group-prepend"><div class="input-group-text" disabled id="displayName">Name</div></div></div><div class="form-group"> <label for="email">E-mail</label><div class="input-group-prepend"><div class="input-group-text" disabled id="email">E-mail</div></div></div><div class="form-group"> <label for="city">City:</label> <input type="text" class="form-control" id="city"></div><div class="form-group"> <label for="college">College:</label> <input type="text" class="form-control" id="college"></div><div class="form-group"> <label for="phone">Phone Number:</label> <input type="text" class="form-control" id="phone"></div><p></p>',
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Register Me!'
-}).then((result) => {
-  if (result.value) {
-  	postData();
-  }
-})
-}
 
-function registrationStep1(){
-	Swal.fire({
-		title: 'Accomadation Fee',
-		text: 'Press the Button',
-		type: 'info'
-	})
-}
-
-function paymentStep1(){
-	popup('echsummit-accomodation-fees-434033');
-}
 function postData(){
-	 Swal.fire({
-      title: 'Registration Successful',
-      text: 'Your Registration has been completed successfuly. Procede for Payments',
-      type: 'success',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Take me to Step 1',
-      confirmButtonClass: 'tsbutton'
-    }).then((result) => {
-    	if(result.value) {
-    		paymentStep1();
-    	}
-    })
-	
-  $.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
-  {
-    displayName: displayName,
-    uid: uid,
-    college: document.getElementById("college").value,
-    email: email,
-    photoURL: photoURL,
-    phoneNumber: document.getElementById("phone").value
-  },
-  function(data,status){
-    console.log(data);
-    console.log(status);
-    if(status == "success"){
-    	 Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
-    }
+	$.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
+	  {
+	    displayName: displayName,
+	    uid: uid,
+	    college: document.getElementById("college").value,
+	    city: document.getElementById("city").value,
+	    email: email,
+	    photoURL: photoURL,
+	    phoneNumber: document.getElementById("phone").value
+	  },
+	  function(data,status){
+	    console.log(data);
+	    console.log(status);
+	    if(status == "success"){
+	    	alert("Registration Successful");
+	    }
   });
 }
+
+db.collection("users").doc(uid)
+    .onSnapshot(function(doc) {
+    	response = doc.data();
+    	if(response.paidWorkshop == undefined)
+    		document.getElementById("paymentStatus").textContent = "Kuch nai diya tune abhi tak madarchod";
+        console.log("Current data: ", doc.data());
+});
 
 function getData(){
   $.get("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/registrations?uid="+uid,
   function(data,status){
-  	var obj = JSON.parse(data);
-    document.getElementById("college").value = obj.college;
-    document.getElementById("phone").value = obj.phone;
-    document.getElementById("city").value = obj.city;
+  	console.log(data.data.phoneNumber);
+    document.getElementById("college").value = data.data.college;
+    document.getElementById("phone").value = data.data.phoneNumber;
+    document.getElementById("city").value = data.data.city;
   });
 }
 
@@ -186,9 +153,8 @@ function initApp() {
 	  // [START_EXCLUDE]
 	  document.getElementById('quickstart-sign-in').textContent = 'Log out';
 	  document.getElementById('photoURL').src = photoURL;
-	  document.getElementById('displayName').textContent = displayName;
-	  document.getElementById("email").textContent = email;
-	  console.log(email);
+	  document.getElementById('displayName').value = displayName;
+	  document.getElementById("email").value = email;
 	  document.getElementById("submit").disabled = false;
 	  getData();
 	  // [END_EXCLUDE]

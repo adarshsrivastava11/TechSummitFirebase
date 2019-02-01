@@ -24,6 +24,7 @@
 	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
 	<script src="js/backend.js"></script>
 	<script src="js/dashboard.js"></script>
+
 	<style>
 		#header h3 {
 		  font-family: "Montserrat", sans-serif;
@@ -68,6 +69,7 @@
 </head>
 
 <body>
+	<div><noscript id="tsNoJsMsg">Javascript has not been enalbled in your browser.</noscript></div>
 	<section class="section-one">
 		<div class="navbar" style="margin-left:9%">
 			<img class="logo-main" src="./images/logo-main.png">
@@ -344,23 +346,24 @@
 			<h2>Dashboard</h2>
 			<div class="bottom">
 				<div class="details">
+					<img id="photoURL" src="" >
 					<div class="input-block">
-						<input type="text" placeholder="Your full name">
+						<input type="text" id="displayName" placeholder="Your full name">
 					</div>
 					<div class="input-block">
-						<input type="text" placeholder="Email address">
+						<input type="text" id="email" placeholder="Email address">
 					</div>
 					<div class="input-block">
-						<input type="text" placeholder="Your mobile number">
+						<input type="text" id="phone" placeholder="Your mobile number">
 					</div>
 					<div class="input-block">
-						<input type="text" placeholder="College Name">
+						<input type="text" id="college" placeholder="College Name">
 					</div>
 					<div class="input-block">
-						<input type="text" placeholder="College City">
+						<input type="text" id="city" placeholder="College City">
 					</div>
-					<button class="submit-button">
-						<i class="fa fa-check" aria-hidden="true"></i> SUBMIT
+					<button class="submit-button" onclick="postData()">
+						<i class="fa fa-check" id="submit" aria-hidden="true"></i> SUBMIT
 					</button>
 				</div>
 				<div class="registration">
@@ -368,11 +371,11 @@
 						<span style="font-size: 0.75em">You have registered for</span>
 						<div class="workshop-title">Test workshop</div>
 						<div class="date">Soon</div>
-						<div class="status">Need to pay the accomodation fees</div>
+						<div class="status" id="paymentStatus">Need to pay the accomodation fees</div>
 						<div class="action-buttons">
-							<button class="pay-workshop" onclick="payWorkshopFees()">Pay workshop fees</button>
+							<button class="pay-workshop tsbutton" onclick="payWorkshopFees()">Pay workshop fees</button>
 							+
-							<button class="pay-accomodation" onclick="payAccomodation()">Pay accomodation fees</button>
+							<button class="pay-accomodation tsbutton" onclick="payAccomodation()">Pay accomodation fees</button>
 						</div>
 					</div>
 					<div class="no-registration">
@@ -385,11 +388,10 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js"></script>
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<script src="js/script.js"></script>
 	<script type="text/javascript" src="particles.js"></script>
-	<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
