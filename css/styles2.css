@@ -85,6 +85,33 @@
 .sponsors-list img {
     max-width: 230px;
 }
+#sticky-login-button, #sticky-dashboard-button {
+  position: fixed;
+  left: 110vw;
+  transition: 0.5s;
+}
+#sticky-login-button.visible, #sticky-dashboard-button.visible {
+  transition: 0.5s;
+  left: 82vw !important;
+}
+#sticky-login-button {
+  top: 5vh;
+  width: 7vw;
+}
+#sticky-dashboard-button {
+  top: 13vh;
+  width: 7vw;
+}
+#sticky-login-button button, #sticky-dashboard-button button {
+    height: 3em;
+    width: 15vw;
+    border-radius: 1.5em;
+    padding: 0 1em;
+    background: #ba00fb;
+    color: white;
+    cursor: pointer;
+    border: 0;
+}
 
 /* Copied from SCSS */
 #dashboard {

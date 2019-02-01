@@ -389,6 +389,12 @@
 			</div>
 		</div>
 	</div>
+	<div id="sticky-login-button">
+		<button><i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER NOW</button>
+	</div>
+	<div id="sticky-dashboard-button">
+		<button onclick="showDashboard()"><i class="fa fa-user-circle" aria-hidden="true"></i> | DASHBOARD</button>
+	</div>
 	<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js"></script>
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<script src="js/script.js"></script>
@@ -397,6 +403,40 @@
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="./lib/jquery.cntl.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$('#JPO').popup({
+				background: false,
+				horizontal: 'right',
+				vertical: 'bottom',
+				keepfocus: false,
+				autozindex: true,
+				blur: true
+			});
+			$('.cntl').cntl({
+				revealbefore: 300,
+				anim_class: 'cntl-animate',
+				onreveal: function (e) {
+					console.log(e);
+				}
+			});
+			// Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
+			//$.fn.popup.defaults.pagecontainer = '#page'
+		});
+		$(window).scroll(function() {
+			if($(window).scrollTop() > window.innerHeight) {
+				document.getElementById('sticky-login-button').classList.add('visible');
+				document.getElementById('sticky-dashboard-button').classList.add('visible');
+				// document.getElementById('sticky-register-button').classList.add('visible');
+
+			} else {
+				document.getElementById('sticky-login-button').classList.remove('visible');
+				document.getElementById('sticky-dashboard-button').classList.remove('visible');
+				// document.getElementById('sticky-login-button').classList.remove('visible');
+			}
+		});
+	</script>
 	
 	<!-- <script src="https://use.fontawesome.com/ae7ffc7b99.js"></script> -->
 </body>
