@@ -87,10 +87,9 @@
 			<div class="button-container" id="dashboardButtonMain"  style="pointer-events: all;"><button class="circular" onclick="showModal('#dashboard')">
 				<i class="fa fa-user-plus" aria-hidden="true"></i> | REGISTER</button>
 			</div>
-
 			<div class="button-container">
 				<a href="#Speakers">
-					<button class="circular"  style="pointer-events: all;">
+					<button class="circular shad"  style="pointer-events: all; cursor: pointer;">
 						<i class="fas fa-microphone"></i> | SEE LINEUP
 					</button>
 				</a>
@@ -124,7 +123,7 @@
 				<div class="multiple-repeat" v-for="intro in intros">
 					<div class="multiple-repeat-number">{{ intro.number }}.</div>
 					<div class="mod-content">
-						<span class="multiple-repeat-heading"> {{ intro.title }} <i class="fa fa-info-circle" aria-hidden="true"
+						<span class="multiple-repeat-heading"> {{ intro.title }} <i class="fa fa-info-circle shad" aria-hidden="true" style="cursor: pointer;"
 							 v-on:click="loadContent(intro)"></i> </span>
 						<div class="gap10px"></div>
 						<!-- <p class="multiple-repeat-info">
