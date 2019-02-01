@@ -131,4 +131,6 @@ particlesJS('particles-js',
   }
 );
 
-$("#dashboard").iziModal();
+$("#dashboard").iziModal({
+  width: window.innerWidth > 600 ? '65vw' : '85vw'
+});

@@ -547,7 +547,6 @@ textarea:focus, input:focus, button:focus {
 
 .section-five .wrapper {
   min-height: 1200px;
-  z-index: 10;
   position: relative;
 }
 
