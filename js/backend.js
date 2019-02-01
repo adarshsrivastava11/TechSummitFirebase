@@ -19,28 +19,47 @@ var email = "";
 var photoURL = "";
 var displayName = "";
 var workshopDetails = "";
+
 function dashboard(){
 	Swal.fire({
   title: 'Are you sure?',
-   html:'<img src="images/img40.png" id="photoURL" class="rounded-circle profile-pic"><div class="form-group" > <label for="nm">Name</label><div class="input-group-prepend"><div class="input-group-text" disabled id="displayName">Name</div></div></div><div class="form-group"> <label for="email">E-mail</label><div class="input-group-prepend"><div class="input-group-text" disabled id="email">E-mail</div></div></div><div class="form-group"> <label for="city">City:</label> <input type="text" class="form-control" id="city"></div><div class="form-group"> <label for="college">College:</label> <input type="text" class="form-control" id="college"></div><div class="form-group"> <label for="phone">Phone Number:</label> <input type="text" class="form-control" id="phone"></div> <button class="btn btn-primary" onclick="postData()" id="submit">Submit</button><p></p>',
+   html:'<img src="images/img40.png" id="photoURL" class="profile-pic"><div class="form-group" > <label for="nm">Name</label><div class="input-group-prepend"><div class="input-group-text" disabled id="displayName">Name</div></div></div><div class="form-group"> <label for="email">E-mail</label><div class="input-group-prepend"><div class="input-group-text" disabled id="email">E-mail</div></div></div><div class="form-group"> <label for="city">City:</label> <input type="text" class="form-control" id="city"></div><div class="form-group"> <label for="college">College:</label> <input type="text" class="form-control" id="college"></div><div class="form-group"> <label for="phone">Phone Number:</label> <input type="text" class="form-control" id="phone"></div><p></p>',
   type: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
+  confirmButtonText: 'Register Me!'
 }).then((result) => {
   if (result.value) {
-    Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
+  	postData();
   }
 })
 }
+
+function registrationStep1(){
+	Swal.fire({
+		title: 'Accomadation Fee',
+		text: 'Press the Button',
+		type: 'info'
+	})
+}
+
+function paymentStep1(){
+	popup('echsummit-accomodation-fees-434033');
+}
 function postData(){
-	alert("Hi");
-	document.getElementById("payments").style.visibility = "visible";
+	 Swal.fire({
+      title: 'Registration Successful',
+      text: 'Your Registration has been completed successfuly. Procede for Payments',
+      type: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Take me to Step 1',
+      confirmButtonClass: 'tsbutton'
+    }).then((result) => {
+    	if(result.value) {
+    		paymentStep1();
+    	}
+    })
 	
   $.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
   {
@@ -55,7 +74,11 @@ function postData(){
     console.log(data);
     console.log(status);
     if(status == "success"){
-    	document.getElementById("payments").style.visibility = "visible";
+    	 Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
     }
   });
 }
