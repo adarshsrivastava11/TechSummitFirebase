@@ -890,8 +890,7 @@ textarea:focus, input:focus, button:focus {
 
 .section-eight .wrap-sponsers h2 {
   font-size: 27px;
-  color: #31374F;
-  margin-left: 50px;
+  color: #31374F;border-bottom: 1px solid gray;
   font-weight: 700;
   padding-bottom: 80px;
   font-family: "Montserrat", sans-serif;
