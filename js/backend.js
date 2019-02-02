@@ -172,20 +172,31 @@ function initApp() {
 					response = doc.data();
 					$('#dashboard').iziModal('open');
 					console.log(response);
+					if (!response.paidWorkshop && !response.paidHospi) {
+						document.getElementById("paymentStatus").textContent = "Please proceed to pay both workshop fees and accomodation fees";
+						document.getElementById("paymentStatus").classList.add('success');
+						document.getElementById("paymentStatus").classList.remove('warn');
+					}
 					if (response.paidWorkshop == true && (response.paidHospi == undefined || response.paidHospi == false)) {
 						document.getElementById("paymentStatus").textContent = "You paid the workshop fees, Please pay the Accomadation Fees to complete the process.";
+						document.getElementById("paymentStatus").classList.add('success');
+						document.getElementById("paymentStatus").classList.remove('warn');
 						document.getElementById("paymentButtons").style.display = "block";
 						document.getElementById("workshopFees").style.display = "none";
 						document.getElementById("accomodationFees").style.display = "inline";
 					}
 					if (response.paidHospi == true && (response.paidWorkshop == undefined || response.paidWorkshop == false)) {
 						document.getElementById("paymentStatus").textContent = "You paid the Accomadation fees, Please pay the workshop Fees to complete the process.";
+						document.getElementById("paymentStatus").classList.add('success');
+						document.getElementById("paymentStatus").classList.remove('warn');
 						document.getElementById("paymentButtons").style.display = "block";
 						document.getElementById("workshopFees").style.display = "inline";
 						document.getElementById("accomodationFees").style.display = "none";
 					}
 					if (response.paidWorkshop == true && response.paidHospi == true) {
 						document.getElementById("paymentStatus").textContent = "Your Payment Process is Done! See you at the Summit";
+						document.getElementById("paymentStatus").classList.add('success');
+						document.getElementById("paymentStatus").classList.remove('warn');
 						document.getElementById("workshopFees").style.display = "none";
 						document.getElementById("accomadationFees").style.display = "none";
 						document.getElementById("yes-registration").style.display = "block";

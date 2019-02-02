@@ -172,6 +172,17 @@
     background: #9768ce;
     padding: 0 1em;
   }
+  #paymentStatus.info {
+    padding: 1em;
+    border-left: 2px solid rgb(193, 157, 0);
+    background: #fff893;
+    }
+  #paymentStatus.success {
+      padding: 1em;
+      background: #93ffb5;
+      padding: 1em;
+      border-left: 2px solid green;
+  }
   @media screen and (max-width: 600px) {
     #dashboard {
       width: 95vw;
