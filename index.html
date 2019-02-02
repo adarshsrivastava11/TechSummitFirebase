@@ -165,7 +165,7 @@
 			<div class="row" style="width:100%">
 				<div class="col-lg-3 col-md-3 col-sm-6" style="height: 700px;" v-for="workshop in workshops">
 					<div class="card text-center">
-						<div class="card-header">{{ workshop.title }}<br>{{ workshop.company }}</div>
+						<div class="card-header">{{ workshop.title }}</div>
 						<img class="card-img-top" :src="workshop.image">
 
 						<div class="card-body" style="background: #FAFAFA">
@@ -174,10 +174,10 @@
 							<p class="card-text">{{ workshop.content }}</p>
 							<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
 						</div>
-						<div class="card-footer text-muted">
+						<div class="card-footer text-muted" style="cursor:pointer" onclick="showDashboard()">
 							<!-- <p>For Students - {{ workshop.priceStudent }}</p>
 							<p>For Others - {{ workshop.priceOther}}</p> -->
-							Registrations will be opened soon
+							REGISTER NOW!
 						</div>
 						<div class="checkbox" hidden style="visibility:hidden">
 							<label><input type="checkbox"> Select This Workshop</label>
@@ -207,13 +207,13 @@
 						</strong>
 						<ul>
 							<li>Summit Registration</li>
-							<li>Opening Ceremony</li>
-							<li>Workshop 1</li>
+							<li>Opening Ceremony (Talk 1 and Talk 2)</li>
+							<li>Workshop slot 1</li>
 							<li>Lunch</li>
-							<li>
+							<!-- <li>
 								<strong> High Tea (Networking) </strong>
-							</li>
-							<li>Workshop 2</li>
+							</li> -->
+							<li>Workshop slot 2</li>
 						</ul>
 					</div>
 					<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fground.png?alt=media&token=15f07985-18c9-4724-a01e-c67708fe4895"></div>
@@ -228,12 +228,16 @@
 							</div>
 						</strong>
 						<ul>
-							<li>Workshop 3</li>
+							<li>Workshop slot 3</li>
 							<li>Lunch</li>
-							<li>Workshop 4</li>
-							<li>High Tea</li>
+							<li>Workshop slot 4</li>
+							<li>
+								<strong>High Tea (Networking)</strong>
+							</li>
 							<li>Talk 3</li>
-							<li>Panel Discussion 1</li>
+							<li>
+								<div>Panel Discussion 1 - Is Industry 4.0 a hype or reality?</div>
+							</li>
 						</ul>
 					</div>
 
@@ -249,12 +253,9 @@
 							</div>
 						</strong>
 						<ul>
-							<li>Talk 4: Rahul Tyagi</li>
+							<li>Talk 4</li>
 							<li>Talk 5</li>
-							<strong>
-								<li>High Tea (Networking)</li>
-							</strong>
-							<li>Pannel Discussion 2</li>
+							<li>Pannel Discussion 2 - Is Industry 4.0 creating or stealing job opportunities?</li>
 						</ul>
 					</div>
 
@@ -266,11 +267,10 @@
 					<div class="cntl-content">
 						<strong>
 							<h1 style="text-align: center;">GALA LUNCH</h1>
+							<div style="text-align: center">(Networking)</div>
 						</strong>
 					</div>
-
 					<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhall2.png?alt=media&token=0b3febbd-3a30-49eb-a383-0b32bc8195f8"></div>
-					<!-- <div class="cntl-icon cntl-center">DAY 3</div> -->
 				</div>
 			</div>
 		</div>
