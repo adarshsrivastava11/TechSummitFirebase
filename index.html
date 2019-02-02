@@ -358,21 +358,21 @@
 					<div class="input-block">
 				      <select class="form-control" id="sel1" onchange="selectWorkshop()">
 				      	<option value="W0">Choose One Workshop</option>
-				        <option value="IoT">IoT (Internet of Things):</option>
+				        <option value="IoT">IoT (Internet of Things)</option>
 				        <option value="Visual Deep Learning">Visual Deep Learning</option>
 				        <option value="Blockchain">Blockchain</option>
 				        <option value="Cloud Computing">Cloud Computing</option>
 				      </select>
 					</div>
-					<button class="submit-button" onclick="postData()">
-						<i class="fa fa-check" id="submit" aria-hidden="true"></i> SUBMIT
+					<button class="submit-button" onclick="postData()" id="submit">
+						<i class="fa fa-check" aria-hidden="true"></i> SUBMIT
 					</button>
 				</div>
 				<div class="registration">
 
 					<div class="yes-registration" id="yes-registration" style="display: none;">
 						<span style="font-size: 0.75em">You have registered for</span>
-						<div class="workshop-title"></div>
+						<div class="workshop-title" id="workshop-title"></div>
 						
 					</div>
 					<div class="yes-registration">

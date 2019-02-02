@@ -85,9 +85,6 @@
 .sponsors-list img {
     max-width: 230px;
 }
-#dashboardButtonMain {
-    display: none;
-}
 #sticky-login-button, #sticky-dashboard-button {
   position: fixed;
   left: 110vw;
