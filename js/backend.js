@@ -156,6 +156,8 @@ function initApp() {
 	firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 	  // User is signed in.
+	  document.getElementById('sticky-login-button').style.display = 'none';
+	  document.getElementById('sticky-dashboard-button').style.display = 'block';
 	  document.getElementById('dashboardButtonMain').style.display = 'block';
 	  displayName = user.displayName;
 	  email = user.email;
@@ -201,6 +203,8 @@ function initApp() {
 	  // [START_EXCLUDE]
 	  document.getElementById('quickstart-sign-in').textContent = 'Continue With Facebook';
 	  document.getElementById('dashboardButtonMain').style.display = 'none';
+	  document.getElementById('sticky-dashboard-button').style.display = 'none';
+	  document.getElementById('sticky-login-button').style.display = 'block';
 	  // [END_EXCLUDE]
 	}
 	// [START_EXCLUDE]
