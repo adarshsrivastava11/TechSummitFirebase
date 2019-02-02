@@ -90,7 +90,11 @@ function getData(){
   	if (data.data != "404") {
 	    document.getElementById("college").value = data.data.college;
 	    document.getElementById("phone").value = data.data.phoneNumber;
-	    document.getElementById("city").value = data.data.city;
+			document.getElementById("city").value = data.data.city;
+			if (data.displayName && data.uid && data.college && data.city && data.email && data.phoneNumber && data.workshop) {
+				document.getElementById("paymentButtons").style.display="block";
+				document.getElementById("submit").disabled = true;
+			}
 	}
   });
 }
@@ -152,6 +156,7 @@ function initApp() {
 	firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 	  // User is signed in.
+	  document.getElementById('dashboardButtonMain').style.display = 'block';
 	  displayName = user.displayName;
 	  email = user.email;
 	  var emailVerified = user.emailVerified;
@@ -167,38 +172,38 @@ function initApp() {
 	  getData();
 	  db.collection("users").doc(uid)
 	    .onSnapshot(function(doc) {
-	    	response = doc.data();
+				response = doc.data();
+				$('#dashboard').iziModal('open');
 	    	console.log(response);
 	    	if(response.paidWorkshop == true && (response.paidHospi == undefined || response.paidHospi == false)){
-	    		document.getElementById("paymentStatus").textContent = "You paid workshop fees, Please pay the Accomadation Fees to complete the process.";
+	    		document.getElementById("paymentStatus").textContent = "You paid the workshop fees, Please pay the Accomadation Fees to complete the process.";
 	    		document.getElementById("paymentButtons").style.display="block";
 	    		document.getElementById("workshopFees").style.display = "none";
 	    		document.getElementById("accomodationFees").style.display = "inline";
 	    	}
 	    	if(response.paidHospi == true && (response.paidWorkshop == undefined || response.paidWorkshop == false)){
-	    		document.getElementById("paymentStatus").textContent = "You paid Accomadation fees, Please pay the Workshop Fees to complete the process.";
+	    		document.getElementById("paymentStatus").textContent = "You paid the Accomadation fees, Please pay the workshop Fees to complete the process.";
 	    		document.getElementById("paymentButtons").style.display = "block";
 	    		document.getElementById("workshopFees").style.display = "inline";
 	    		document.getElementById("accomodationFees").style.display = "none";
 	    	}
 	    	if(response.paidWorkshop == true && response.paidHospi == true){
-	    	    document.getElementById("paymentStatus").textContent = "Your Payment Process is Done! See you at the Summit";
-	    	    document.getElementById("workshopFees").style.display = "none";
-	    	    document.getElementById("accomadationFees").style.display = "none";
-	    	    document.getElementById("yes-registration").style.display = "block";
-	    	    document.getElementById("no-registration").style.display = "none";
+					document.getElementById("paymentStatus").textContent = "Your Payment Process is Done! See you at the Summit";
+					document.getElementById("workshopFees").style.display = "none";
+					document.getElementById("accomadationFees").style.display = "none";
+					document.getElementById("yes-registration").style.display = "block";
+					document.getElementById("no-registration").style.display = "none";
 	    	}
-	});
+		});
 	  // [END_EXCLUDE]
 	} else {
 	  // User is signed out.
 	  // [START_EXCLUDE]
-	  // document.getElementById('quickstart-sign-in').textContent = 'Continue With Facebook';
-	  // document.getElementById("submit").disabled = true;
+	  document.getElementById('quickstart-sign-in').textContent = 'Continue With Facebook';
+	  document.getElementById('dashboardButtonMain').style.display = 'none';
 	  // [END_EXCLUDE]
 	}
 	// [START_EXCLUDE]
-	document.getElementById('quickstart-sign-in').disabled = false;
 	// [END_EXCLUDE]
 	});
 	// [END authstatelistener]

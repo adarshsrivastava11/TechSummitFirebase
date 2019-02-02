@@ -131,6 +131,10 @@ particlesJS('particles-js',
   }
 );
 
+function viewAllWorkshops() {
+  $('#dashboard').iziModal('close');
+}
+
 $("#dashboard").iziModal({
-  width: window.innerWidth > 600 ? '65vw' : '85vw'
+  width: window.innerWidth > 600 ? 0.65*window.innerWidth : 0.93*window.innerWidth
 });

@@ -172,4 +172,54 @@
     background: #9768ce;
     padding: 0 1em;
   }
+  @media screen and (max-width: 600px) {
+    #dashboard {
+      width: 95vw;
+    }
+    #dashboard .bottom {
+        flex-direction: column;
+    }
+    #Intro {
+        margin: 0;
+    }
+    #Intro .side-tag {
+        display: none;
+    }
+    #Intro .left {
+        width: 100%;
+    }
+    #Intro .info-content {
+        width: 100%;
+    }
+    #Intro .desc-div.left {
+        width: 100%;
+    }
+    #Intro .desc-div.right {
+        width: 100%;
+        padding: 0.5em 1em;
+    }
+
+    #Workshops .wrapper.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cntl-icon {
+        transform: translateX(35%) rotateZ(-90deg);
+    }
+    .sponsors-heading {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 0 !important;
+    }
+    .pc-only {
+        display: none;
+    }
+}
   /* End copied from scss */
+  button:disabled,
+  button[disabled]{
+    border: 1px solid #999999;
+    color: #cccccc;
+    background-color: #666666;
+  }
