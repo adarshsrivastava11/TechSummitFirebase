@@ -369,11 +369,17 @@
 					</button>
 				</div>
 				<div class="registration">
-
+					<div class="no-registration" id="no-registration">
+						<h4 id="selectedWorkshop">You have not registered for any workshop yet!</h4>
+						<div>
+							<a href="#Workshops">
+								<button class="view-workshops" onclick="viewAllWorkshops()">View all workshops</button>
+							</a>
+						</div>
+					</div>
 					<div class="yes-registration" id="yes-registration" style="display: none;">
 						<span style="font-size: 0.75em">You have registered for</span>
 						<div class="workshop-title"></div>
-						
 					</div>
 					<div class="yes-registration">
 						<div class="status" id="paymentStatus">Need to pay the accomodation fees</div>
@@ -385,14 +391,6 @@
 							<div>
 								<button class="pay-accomodation tsbutton" id="accomodationFees" onclick="payAccomodation()">Pay accomodation fees</button>
 							</div>
-						</div>
-					</div>
-					<div class="no-registration" id="no-registration">
-						<h4 id="selectedWorkshop">You have not registered for any workshop yet!</h4>
-						<div>
-							<a href="#Workshops">
-								<button class="view-workshops" onclick="viewAllWorkshops()">View all workshops</button>
-							</a>
 						</div>
 					</div>
 				</div>
