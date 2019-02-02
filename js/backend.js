@@ -18,6 +18,7 @@ var uid = "";
 var email = "";
 var photoURL = "";
 var displayName = "";
+var phoneNumber = "";
 var workshopDetails = "";
 
 function showModal(modal) {
