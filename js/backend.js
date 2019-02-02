@@ -75,7 +75,13 @@ function postData() {
 				console.log(data);
 				console.log(status);
 				if (status == "success") {
-					alert("Registration Successful");
+					iziToast.success({
+						position: 'center',
+						title: 'Success',
+						message: 'Details updated. Now you may proceed for payments.',
+						overlay: true,
+						overlayClose: true
+					});
 					document.getElementById("paymentButtons").style.display = "block";
 					document.getElementById("submit").disabled = true;
 				}
@@ -107,20 +113,12 @@ function getData() {
 
 function toggleSignIn() {
 	if (!firebase.auth().currentUser) {
-		// [START createprovider]
 		var provider = new firebase.auth.FacebookAuthProvider();
-		// [END createprovider]
-		// [START addscopes]
-		// [END addscopes]
-		// [START signin]
 		firebase.auth().signInWithPopup(provider).then(function (result) {
 			// This gives you a Facebook Access Token. You can use it to access the Facebook API.
 			var token = result.credential.accessToken;
 			// The signed-in user info.
 			var user = result.user;
-			// [START_EXCLUDE]
-			// document.getElementById('quickstart-oauthtoken').textContent = token;
-			// [END_EXCLUDE]
 		}).catch(function (error) {
 			// Handle Errors here.
 			var errorCode = error.code;
@@ -129,7 +127,6 @@ function toggleSignIn() {
 			var email = error.email;
 			// The firebase.auth.AuthCredential type that was used.
 			var credential = error.credential;
-			// [START_EXCLUDE]
 			if (errorCode === 'auth/account-exists-with-different-credential') {
 				alert('You have already signed up with a different auth provider for that email.');
 				// If you are using multiple auth providers on your app you should handle linking
@@ -137,20 +134,13 @@ function toggleSignIn() {
 			} else {
 				console.error(error);
 			}
-			// [END_EXCLUDE]
 		});
-		// [END signin]
 	} else {
-		// [START signout]
 		firebase.auth().signOut();
 		location.reload();
-		// [END signout]
 	}
-	// [START_EXCLUDE]
 	document.getElementById('quickstart-sign-in').disabled = true;
-	// [END_EXCLUDE]
 }
-// [END buttoncallback]
 
 /**
 * initApp handles setting up UI event listeners and registering Firebase auth listeners:
@@ -159,7 +149,6 @@ function toggleSignIn() {
 */
 function initApp() {
 	// Listening for auth state changes.
-	// [START authstatelistener]
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			// User is signed in.
@@ -173,7 +162,6 @@ function initApp() {
 			var isAnonymous = user.isAnonymous;
 			uid = user.uid;
 			var providerData = user.providerData;
-			// [START_EXCLUDE]
 			document.getElementById('quickstart-sign-in').textContent = 'Log out';
 			document.getElementById('photoURL').src = photoURL;
 			document.getElementById('displayName').value = displayName;
@@ -211,7 +199,6 @@ function initApp() {
 			document.getElementById('sticky-login-button').style.display = 'block';
 		}
 	});
-
 	document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
 }
 
