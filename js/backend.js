@@ -34,20 +34,21 @@ function payWorkshopFees() {
 	const eventcode = 'techsummitworkshop-34003';
 	const payPrefill = {
 		cq1: uid,	// custom question 1
-		cq2: document.getElementById("phone").value,
-		cq3: workshopDetails,
+		cq2: workshopDetails,
+		cq3: document.getElementById("phone").value,
 		emailid: email,
 		name: displayName
 	};
 	payPrefill['eventcode'] = eventcode;
 	popupWithAutoFill(payPrefill);
 }
+
 function payAccomodation() {
 	const eventcode = 'techsummit-accomodation-fees-434033';
 	const payPrefill = {
 		cq1: uid,	// custom question 1
-		cq2: document.getElementById("phone").value,
-		cq3: workshopDetails,
+		cq2: workshopDetails,
+		cq3: document.getElementById("phone").value,
 		emailid: email,
 		name: displayName
 	};
@@ -81,8 +82,6 @@ function postData() {
 			});
 	}
 }
-
-
 
 function getData() {
 	$.get("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/registrations?uid=" + uid,
@@ -205,20 +204,13 @@ function initApp() {
 						document.getElementById("no-registration").style.display = "none";
 					}
 				});
-			// [END_EXCLUDE]
 		} else {
-			// User is signed out.
-			// [START_EXCLUDE]
 			document.getElementById('quickstart-sign-in').textContent = 'Continue With Facebook';
 			document.getElementById('dashboardButtonMain').style.display = 'none';
 			document.getElementById('sticky-dashboard-button').style.display = 'none';
 			document.getElementById('sticky-login-button').style.display = 'block';
-			// [END_EXCLUDE]
 		}
-		// [START_EXCLUDE]
-		// [END_EXCLUDE]
 	});
-	// [END authstatelistener]
 
 	document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
 }
