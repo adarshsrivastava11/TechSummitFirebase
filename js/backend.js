@@ -35,7 +35,7 @@ function payWorkshopFees() {
 	const payPrefill = {
 		cq1: uid,	// custom question 1
 		cq2: workshopDetails,
-		cq3: document.getElementById("phone").value,
+		cq3: '+91'+  document.getElementById("phone").value,
 		emailid: email,
 		name: displayName
 	};
@@ -48,7 +48,7 @@ function payAccomodation() {
 	const payPrefill = {
 		cq1: uid,	// custom question 1
 		cq2: workshopDetails,
-		cq3: document.getElementById("phone").value,
+		cq3: '+91' + document.getElementById("phone").value,
 		emailid: email,
 		name: displayName
 	};
