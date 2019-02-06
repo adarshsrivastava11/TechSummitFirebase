@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Admin Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+        <table id="infoall" class="table table-dark">
+            <tr>
+                <th>Name</th>
+                <th>College</th>
+                <th>City</th>
+                <th>Phone Number</th>
+                <th>Workshop</th>
+                <th>E-Mail</th>
+                <th>Paid Workshop</th>
+                <th>Paid Hospitality</th>
+            </tr>
+        </table>
+        <ul id="infotot"></ul>
+        <button class="btn btn-info" onclick="alldata()">Get Info For All</button>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
