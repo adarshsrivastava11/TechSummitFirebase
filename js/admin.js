@@ -15,7 +15,6 @@ var config = {
         querySnapshot.forEach(function(doc) {
         var dat=doc.data();
         totamt+=1;
-        // var txt="Name: "+dat.name+"\tCollege: "+dat.college+"\tCity: "+dat.city+"\tPhone Number: "+dat.phoneNumber+"\tWorkshop "+dat.workshop+"\tE-Mail:"+dat.email;
         var node = document.createElement("TR");
         var name = document.createElement("TD");
         var college = document.createElement("TD");
@@ -23,31 +22,38 @@ var config = {
         var phn = document.createElement("TD");
         var wrkshp = document.createElement("TD");
         var email = document.createElement("TD");
+        var pwrk = document.createElement("TD");
+        var phos = document.createElement("TD");
         var nm = document.createTextNode(dat.name);
         var cllg = document.createTextNode(dat.college);
         var cty = document.createTextNode(dat.city);
         var phnnum = document.createTextNode(dat.phoneNumber);
         var wrk = document.createTextNode(dat.workshop);
         var em = document.createTextNode(dat.email);
+        var pwrkshp = document.createTextNode((dat.paidWorkshop)?"true":"false");
+        var phospi = document.createTextNode((dat.paidHospi)?"true":"false");
         name.appendChild(nm);
         college.appendChild(cllg);
         city.appendChild(cty);
         phn.appendChild(phnnum);
         wrkshp.appendChild(wrk);
         email.appendChild(em);
+        pwrk.appendChild(pwrkshp);
+        phos.appendChild(phospi);
         node.appendChild(name);
         node.appendChild(college);
         node.appendChild(city);
         node.appendChild(phn);
         node.appendChild(wrkshp);
         node.appendChild(email);
+        node.appendChild(pwrk);
+        node.appendChild(phos);
         document.getElementById("infoall").appendChild(node);
         });
         var node = document.createElement("LI");
         document.getElementById("infotot").appendChild(node);
         node.appendChild(document.createTextNode("Total Registrations: "+totamt));
-    })
-    .catch(function(error) {
+    }).catch(function(error) {
         console.log("Error getting documents: ", error);
     });
 }
