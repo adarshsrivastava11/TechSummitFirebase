@@ -8,73 +8,99 @@ var config = {
 };
     firebase.initializeApp(config);
     var db = firebase.firestore();
+    var pdat,dat;
+    db.collection("adminpass").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+        pdat=doc.data();});
+    }).catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+    function sendcomments(uid){
+        var cmmt=document.getElementById(uid).value;
+        var userRef = db.collection("users").doc(""+uid);
+    return userRef.update({
+        comment: cmmt
+        }).then(function() {
+    window.alert("Updated Successfully");
+    }).catch(function(error) {
+    console.error("Error updating document: ", error);
+});
+    }
+
+    function verify(){
+        keynew=document.getElementById("adp").value;
+        if(keynew==pdat.password){
+                alldata();
+        }
+        else{
+                window.alert("Wrong Password Entered");
+        }}
+
     function alldata(){
     var totamt=0;
     db.collection("users").orderBy("timeStamp").get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-        var dat=doc.data();
+        dat=doc.data();
         totamt+=1;
         var node = document.createElement("TR");
         var count = document.createElement("TD");
+        var remarkctab = document.createElement("TD");
+        var remarkc = document.createElement("INPUT");
+        remarkc.setAttribute("id", dat.uid);
+        var subbut = document.createElement("TD");
+        var submitbutt = document.createElement("BUTTON");
+        submitbutt.setAttribute("id", dat.uid+"s");
+        submitbutt.setAttribute("class", "btn btn-success");
+        submitbutt.setAttribute("type", "submit");
+        submitbutt.setAttribute("onclick", "sendcomments(\""+dat.uid+"\")");
+        var remarketab = document.createElement("TD");
         var name = document.createElement("TD");
         var college = document.createElement("TD");
         var city = document.createElement("TD");
         var phn = document.createElement("TD");
         var wrkshp = document.createElement("TD");
         var email = document.createElement("TD");
-<<<<<<< HEAD
-        var workshoppaid = document.createElement("TD");
-        var acco = document.createElement("TD");
-
-        var cc = document.createTextNode(totamt);
-=======
         var pwrk = document.createElement("TD");
         var phos = document.createElement("TD");
->>>>>>> 8c6bb867a364e35d86be433f3713793c6d032aa0
+        var submtxt=document.createTextNode("Submit");
+        var cntr=document.createTextNode(totamt);
+        var cm=dat.comment?dat.comment:"";
+        var rmke = document.createTextNode(cm);
         var nm = document.createTextNode(dat.name);
         var cllg = document.createTextNode(dat.college);
         var cty = document.createTextNode(dat.city);
         var phnnum = document.createTextNode(dat.phoneNumber);
         var wrk = document.createTextNode(dat.workshop);
         var em = document.createTextNode(dat.email);
-<<<<<<< HEAD
-        var wps = document.createTextNode(dat.paidWorkshop);
-        var aps = document.createTextNode(dat.paidHospi);
-
-        count.appendChild(cc);
-=======
         var pwrkshp = document.createTextNode((dat.paidWorkshop)?"true":"false");
         var phospi = document.createTextNode((dat.paidHospi)?"true":"false");
->>>>>>> 8c6bb867a364e35d86be433f3713793c6d032aa0
+        remarketab.appendChild(rmke);
+        remarkctab.appendChild(remarkc);
+        submitbutt.appendChild(submtxt);
+        subbut.appendChild(submitbutt);
+        count.appendChild(cntr);
         name.appendChild(nm);
         college.appendChild(cllg);
         city.appendChild(cty);
         phn.appendChild(phnnum);
         wrkshp.appendChild(wrk);
         email.appendChild(em);
-<<<<<<< HEAD
-        workshoppaid.appendChild(wps);
-        acco.appendChild(aps);
-
-        node.appendChild(count);
-=======
         pwrk.appendChild(pwrkshp);
         phos.appendChild(phospi);
->>>>>>> 8c6bb867a364e35d86be433f3713793c6d032aa0
+        node.appendChild(count);
         node.appendChild(name);
         node.appendChild(college);
         node.appendChild(city);
         node.appendChild(phn);
         node.appendChild(wrkshp);
         node.appendChild(email);
-<<<<<<< HEAD
-        node.appendChild(workshoppaid);
-        node.appendChild(acco);
-=======
         node.appendChild(pwrk);
         node.appendChild(phos);
->>>>>>> 8c6bb867a364e35d86be433f3713793c6d032aa0
+        node.appendChild(remarkctab);
+        node.appendChild(subbut);
+        node.appendChild(remarketab);
         document.getElementById("infoall").appendChild(node);
         });
         var node = document.createElement("LI");

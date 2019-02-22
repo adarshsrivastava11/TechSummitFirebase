@@ -10,7 +10,12 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 </head>
 <body>
-    <div class="container insertpt">
+    <div class="form-group container"><br>
+        <label for="adp">Password :</label>
+        <input type="adp" class="form-control" autofocus autocomplete="off" id="adp"><br>
+        <button type="submit" class="btn btn-info" onclick="verify()">Validate & Get Data</button>
+    </div>
+    <div class="insertpt">
         <table id="infoall" class="table table-dark">
             <tr>
                 <th>Serial Number</th>
@@ -22,10 +27,13 @@
                 <th>E-Mail</th>
                 <th>Workshop Paid</th>
                 <th>Accomodation Paid</th>
+                <th>Comments Input</th>
+                <th></th>
+                <th>Existing Comments</th>
             </tr>
         </table>
         <ul id="infotot"></ul>
-        <button class="btn btn-info" onclick="alldata()">Get Info For All</button>
+        <!-- <button id="inforec" class="btn btn-info" onclick="">Get Info For All</button> -->
     </div>
     <script src="./js/admin.js"></script>
 </body>
