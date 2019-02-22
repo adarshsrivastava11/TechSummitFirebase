@@ -175,13 +175,10 @@
 							<p class="card-text">{{ workshop.content }}</p>
 							<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
 						</div>
-						<div class="card-footer text-muted" style="cursor:pointer" onclick="showDashboard()">
+						<div class="card-footer text-muted">
 							<!-- <p>For Students - {{ workshop.priceStudent }}</p>
 							<p>For Others - {{ workshop.priceOther}}</p> -->
-							REGISTER NOW!
-						</div>
-						<div class="checkbox" hidden style="visibility:hidden">
-							<label><input type="checkbox"> Select This Workshop</label>
+							REGISTER NOW on Dashboard!
 						</div>
 					</div>
 				</div>
@@ -268,7 +265,7 @@
 					<div class="cntl-content">
 						<strong>
 							<h1 style="text-align: center;">GALA LUNCH</h1>
-							<div style="text-align: center">(Networking)</div>
+							<div style="text-align: center">(10th March, Day - 3, Networking)</div>
 						</strong>
 					</div>
 					<div class="cntl-image"><img src="https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhall2.png?alt=media&token=0b3febbd-3a30-49eb-a383-0b32bc8195f8"></div>
@@ -358,7 +355,7 @@
 					</div>
 					<div class="input-block">
 				      <select class="form-control" id="sel1" onchange="selectWorkshop()">
-				      	<option value="W0">Choose One Workshop</option>
+				      	<option value="NO">Choose One Workshop</option>
 				        <option value="IoT">IoT (Internet of Things)</option>
 				        <option value="Visual Deep Learning">Visual Deep Learning</option>
 				        <option value="Blockchain">Blockchain</option>
@@ -403,10 +400,10 @@
 		</div>
 	</div>
 	<div id="sticky-login-button">
-		<button><i class="fa fa-user-plus" aria-hidden="true"></i><span class="pc-only">| LOGIN WITH FACEBOOK</span></button>
+		<button><i class="fa fa-user-plus" id="floating-sign-in" aria-hidden="true"></i><span class="pc-only">| LOGIN WITH FACEBOOK</span></button>
 	</div>
 	<div id="sticky-dashboard-button">
-		<button onclick="showModal('#dashboard')"><i class="fa fa-user-circle" aria-hidden="true"></i> <span class="pc-only">| DASHBOARD</span></button>
+		<button onclick="showModal('#dashboard')"><i class="fa fa-user-circle" aria-hidden="true"></i> <span class="pc-only">| REGISTER</span></button>
 	</div>
 	<script src="https://www.townscript.com/popup-widget/townscript-widget.nocache.js"></script>
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>

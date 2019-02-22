@@ -57,8 +57,11 @@ function payAccomodation() {
 }
 
 function postData() {
-	if (workshopDetails == "W0")
+	console.log(document.getElementById("college").value);
+	if (workshopDetails == "NO")
 		alert("Please Select a Workshop!");
+	if (document.getElementById("college").value == '')
+		alert("Can't Summit without this Data");
 	else {
 		$.post("https://us-central1-techsubmit19.cloudfunctions.net/helloWorld/",
 			{
@@ -73,7 +76,6 @@ function postData() {
 			},
 			function (data, status) {
 				console.log(data);
-				console.log(status);
 				if (status == "success") {
 					iziToast.success({
 						position: 'center',
@@ -83,7 +85,6 @@ function postData() {
 						overlayClose: true
 					});
 					document.getElementById("paymentButtons").style.display = "block";
-					document.getElementById("submit").disabled = true;
 				}
 			});
 	}
@@ -97,17 +98,13 @@ function getData() {
 				document.getElementById("college").value = data.data.college;
 				document.getElementById("phone").value = data.data.phoneNumber;
 				document.getElementById("city").value = data.data.city;
-				document.getElementById("sel1").value = data.workshop;
-				if (!data.workshop) {
+				document.getElementById("sel1").value = data.data.workshop;
+				if (!data.data.workshop) {
 					document.getElementById("selectedWorkshop").textContent = "You have not registered for any workshop yet.";	
 				} else {
-					document.getElementById("selectedWorkshop").textContent = "You have selected " + data.workshop + " workshop.";	
+					document.getElementById("selectedWorkshop").textContent = "You have selected " + data.data.workshop + " workshop.";	
 				}
-				if (data.displayName && data.uid && data.college && data.city && data.email && data.phoneNumber && data.workshop) {
-					document.getElementById("paymentButtons").style.display = "block";
-					document.getElementById("submit").disabled = true;
-				}
-			}
+				document.getElementById("paymentButtons").style.display = "block";			}
 		});
 }
 
@@ -198,19 +195,20 @@ function initApp() {
 						document.getElementById("paymentStatus").classList.add('success');
 						document.getElementById("paymentStatus").classList.remove('warn');
 						document.getElementById("workshopFees").style.display = "none";
-						document.getElementById("accomadationFees").style.display = "none";
+						document.getElementById("accomodationFees").style.display = "none";
 						document.getElementById("yes-registration").style.display = "block";
 						document.getElementById("no-registration").style.display = "none";
 					}
 				});
 		} else {
-			document.getElementById('quickstart-sign-in').textContent = 'Continue With Facebook';
+			document.getElementById('quickstart-sign-in').textContent = 'LOGIN WITH FACEBOOK';
 			document.getElementById('dashboardButtonMain').style.display = 'none';
 			document.getElementById('sticky-dashboard-button').style.display = 'none';
 			document.getElementById('sticky-login-button').style.display = 'block';
 		}
 	});
 	document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+	document.getElementById('floating-sign-in').addEventListener('click', toggleSignIn, false);
 }
 
 window.onload = function () {
