@@ -166,21 +166,21 @@
 			</div>
 			<br>
 			<div class="row" style="width:100%">
-				<div class="col-lg-3 col-md-3 col-sm-6" style="height: 700px;" v-for="workshop in workshops">
+				<div class="col-lg-3 col-md-3 col-sm-6" style="height: 600px;" v-for="workshop in workshops">
 					<div class="card text-center">
 						<div class="card-header">{{ workshop.title }}</div>
 						<img class="card-img-top" :src="workshop.image">
 
-						<div class="card-body" style="background: #FAFAFA">
+						<div class="card-body" style="background: #FAFAFA; padding-bottom: 0px !important;">
 							<img class="card-img" :src="workshop.image2" style="">
 							<h5 class="card-title">{{ workshop.info }}</h5>
-							<p class="card-text">{{ workshop.content }}</p>
+							<p class="card-text" style="margin:0px;">{{ workshop.content }}</p>
 							<a href="#" class="btn btn-primary" style="visibility: hidden;">Select This Workshop</a>
 						</div>
 						<div class="card-footer text-muted">
 							<!-- <p>For Students - {{ workshop.priceStudent }}</p>
 							<p>For Others - {{ workshop.priceOther}}</p> -->
-							REGISTER NOW on Dashboard!
+							<!-- REGISTER NOW on Dashboard! -->
 						</div>
 					</div>
 				</div>
@@ -310,9 +310,9 @@
 		          <p>We feel proud to present before you our partners in this venture.</p>
 		        </div>
 
-		        <div class="row no-gutters clients-wrap clearfix wow fadeInUp" >
-		          <div class="col-lg-4 col-md-4 col-xs-6" v-for="sponser in sponsers" >
-		          	<h5 style="text-align: center;">{{ sponser.sponsorType }}</h5>
+		        <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="margin-top: 20px !important;">
+		          <div class="col-lg-4 col-md-4 col-xs-6" v-for="sponser in sponsers"  style="margin: 20px 0px 10px 0px;">
+		          	<h5 style="text-align: center;" class="text-muted">{{ sponser.sponsorType }}</h5>
 		            <div  class="client-logo">
 
 		              <img class="img-fluid" :src="sponser.image"  >
