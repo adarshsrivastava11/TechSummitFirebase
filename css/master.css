@@ -507,6 +507,7 @@ textarea:focus, input:focus, button:focus {
 
 .card{
   background: #FAFAFA !important;
+  height: 850px;
 }
 
 .section-four .card-view .settings-two h1 {
@@ -705,7 +706,7 @@ textarea:focus, input:focus, button:focus {
 
 .section-six {
   width: 100vw;
-  min-height: 600px;
+  min-height: 900px;
   position: relative;
   background-color: #FAFAFA;
 }
