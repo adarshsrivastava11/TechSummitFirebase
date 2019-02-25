@@ -7,6 +7,7 @@ function poster(){
     var city=document.getElementById("city").value;
     var eml=document.getElementById("email").value;
     var bodymade="Hello "+name+",\n"+"You have been successfully registered for TechSummit."+"\n\n\n\n"+"Name : "+name+"\nPhone Number : "+phn+"\nCollege : "+college+"\nCollege City : "+city;
+    console.log(bodymade);
 var mailcontent = {
     'subject':subj,
     'body':bodymade,
