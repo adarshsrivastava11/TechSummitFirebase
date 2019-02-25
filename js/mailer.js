@@ -6,14 +6,14 @@ function poster(){
     var name=document.getElementById("displayName").value;
     var city=document.getElementById("city").value;
     var eml=document.getElementById("email").value;
-    var bodymade="Hello "+name+",\n"+"You have been successfully registered for TechSummit."+"\n\n\n\n"+"Name : "+name+"\nPhone Number : "+phn+"\nCollege : "+college+"\nCollege City : "+city;
-    console.log(bodymade);
+    var bodymade="<h1 align=center>TechSummit Registrations</h1>"+"Hello "+name+",<br>"+"You have been successfully registered for TechSummit."+"<br><br>"+"Name : "+name+"<br>Phone Number : "+phn+"<br>College : "+college+"<br>College City : "+city+"<br><br>Regards,<br>Team Techkriti.";
+    // console.log(bodymade);
 var mailcontent = {
     'subject':subj,
     'body':bodymade,
     'email':eml
 }
-console.log(mailcontent);
+// console.log(mailcontent);
 var url = "https://techkriti.org/apiv2/send_mail/";
 $.ajax({
     type: "POST",
