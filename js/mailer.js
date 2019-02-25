@@ -13,6 +13,7 @@ var mailcontent = {
     'body':bodymade,
     'email':eml
 }
+console.log(mailcontent);
 var url = "https://techkriti.org/apiv2/send_mail/";
 $.ajax({
     type: "POST",
