@@ -6,9 +6,11 @@
 		{"number": 3, "displayNumber": "03", "title": "Third Vue Workshop", "info" :"Ekdum Faltu Workshop Hai bey 3", "content": "Yaha aa Gya", "image": "images/img21.jpg"}
 	],
 	"sponsers": [
-		{"image": "images/img21.png"},
-		{"image": "images/img22.png"},
-		{"image": "images/img23.png"}
+		{"image": "https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fmathworks2.png?alt=media&token=81a516f4-6a33-403d-9f07-17dda7d2e839", "sponsorType": "Workshop Partner"},
+		{"image": "https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fitc%20(1).png?alt=media&token=a5d133ad-3f6f-4045-9a27-d3d8c2399858", "sponsorType": "Gold Sponsor"},
+		{"image": "https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fhsbc2.png?alt=media&token=3a208ba8-5915-4934-aaa8-c786d46b4b27", "sponsorType": "Blockchain Hackathon Partner"},
+		{"image": "https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fnetapp.gif?alt=media&token=dc933631-18bc-49d0-b43e-91b87af65b72", "sponsorType": "Platnium Sponsor"},
+		{"image": "https://firebasestorage.googleapis.com/v0/b/techsubmit19.appspot.com/o/images%2Fwomen.jpg?alt=media&token=9896d016-5596-46d4-b9a3-aee3ed41a9c1", "sponsorType": "Women Empowerment Partner"}
 	]
 
 }
