@@ -140,6 +140,15 @@
     padding: 0 1em;
     cursor: pointer;
   }
+  .tidbutt {
+    background: #b200f4;
+    color: white;
+    height: 2.5em;
+    border: none;
+    padding: 0 1em;
+    cursor: pointer;
+  }
+
   #dashboard .dashboard-container .registration {
     padding: 0.5em 1.2em;
     margin: 1.2em 0;
