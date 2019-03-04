@@ -20,7 +20,7 @@ var photoURL = "";
 var displayName = "";
 var phoneNumber = "";
 var workshopDetails = "";
-
+var tidc=0;
 function showModal(modal) {
 	$(modal).iziModal('open');
 }
@@ -99,6 +99,7 @@ function getData() {
 				document.getElementById("phone").value = data.data.phoneNumber;
 				document.getElementById("city").value = data.data.city;
 				document.getElementById("sel1").value = data.data.workshop;
+				tidc=data.data.summitId;
 				if (!data.data.workshop) {
 					document.getElementById("selectedWorkshop").textContent = "You have not registered for any workshop yet.";	
 				} else {
@@ -209,6 +210,22 @@ function initApp() {
 	});
 	document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
 	document.getElementById('floating-sign-in').addEventListener('click', toggleSignIn, false);
+}
+
+function techidprovider(){
+	var userRef = db.collection("users").doc(""+uid);
+	var tidRef = db.collection("users").doc("tidcount");
+	if(tidc==0)
+	tidRef.get().then(function(doc){
+		tidc=doc.data()+1;
+		userRef.update({
+        summitId: tidc
+        }).then(function() {
+			tidRef.set({
+				tid:tidc})
+    }).catch(function(error) {
+    console.error("Error updating document: ", error);
+});})
 }
 
 window.onload = function () {
