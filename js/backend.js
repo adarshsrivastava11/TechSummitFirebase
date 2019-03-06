@@ -216,7 +216,7 @@ function initApp() {
 function techidprovider(){
 	var userRef = db.collection("users").doc(""+uid);
 	var tidRef = db.collection("users").doc("tidcount");
-	if(tidc==0)
+	if(!tidc)
 	tidRef.get().then(function(doc){
 		tidc=doc.data()+1;
 		userRef.update({
