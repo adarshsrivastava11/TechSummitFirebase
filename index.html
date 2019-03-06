@@ -313,8 +313,8 @@
 		          <div class="col-lg-4 col-md-4 col-xs-6" v-for="sponser in sponsers"  style="margin: 20px 0px 10px 0px;">
 		          	<h5 style="text-align: center;" class="text-muted">{{ sponser.sponsorType }}</h5>
 		            <div  class="client-logo">
-
-		              <img class="img-fluid" :src="sponser.image"  >
+									<a :href="sponser.url">
+		              <img class="img-fluid" :src="sponser.image"  ></a>
 		            </div>
 		          </div>
 		     	 </div>
@@ -390,7 +390,6 @@
 				      	<option value="NO">Choose One Workshop</option>
 				        <option value="IoT">IoT (Internet of Things)</option>
 				        <option value="Visual Deep Learning">Visual Deep Learning</option>
-				        <option value="Blockchain">Blockchain</option>
 				        <option value="Cloud Computing">Cloud Computing</option>
 				      </select>
 					</div>

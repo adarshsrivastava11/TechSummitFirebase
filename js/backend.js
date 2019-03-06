@@ -100,7 +100,7 @@ function getData() {
 				document.getElementById("city").value = data.data.city;
 				document.getElementById("sel1").value = data.data.workshop;
 				tidc=data.data.summitId;
-				document.getElementById("tchid").value = "Summit ID : "+tidc;
+				document.getElementById("tchid").textContent = "Summit ID : "+tidc;
 				if (!data.data.workshop) {
 					document.getElementById("selectedWorkshop").textContent = "You have not registered for any workshop yet.";	
 				} else {
