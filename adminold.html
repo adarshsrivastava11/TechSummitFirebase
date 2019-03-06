@@ -3,7 +3,6 @@
     <title>Admin Portal</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -16,10 +15,10 @@
         <input type="adp" class="form-control" autofocus autocomplete="off" id="adp"><br>
         <button type="submit" class="btn btn-info" onclick="verify()">Validate & Get Data</button>
     </div>
-    <div class="insertpt" id="app">
-        <table id="infoall" class="table table-dark" style="display:none">
+    <div class="insertpt">
+        <table id="infoall" class="table table-dark">
             <tr>
-                <th>Summit Id</th>
+                <th>Serial Number</th>
                 <th>Name</th>
                 <th>College</th>
                 <th>City</th>
@@ -32,22 +31,9 @@
                 <th></th>
                 <th>Existing Comments</th>
             </tr>
-                <tr v-for="val in mainjson">
-                    <td>{{val.summitId}}</td>
-                    <td>{{val.name}}</td>
-                    <td>{{val.college}}</td>
-                    <td>{{val.city}}</td>
-                    <td>{{val.phoneNumber}}</td>
-                    <td>{{val.workshop}}</td>
-                    <td>{{val.email}}</td>
-                    <td>{{(val.paidWorkshop)?"true":"false"}}</td>
-                    <td>{{(val.paidWorkshop)?"true":"false"}}</td>
-                    <td><input :id="val.uid"></input></td>
-                    <td><button class="btn btn-success" v-on:click="sendcomments(val.uid)">Submit</button></td>
-                    <td>{{val.comment}}</td>
-                </tr>
         </table>
-        <ul id="infotot" style="display:none">Total Registrations so far : {{totamt}}</ul>
+        <ul id="infotot"></ul>
+        <!-- <button id="inforec" class="btn btn-info" onclick="">Get Info For All</button> -->
     </div>
     <script src="./js/admin.js"></script>
 </body>
